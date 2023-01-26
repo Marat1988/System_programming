@@ -12,17 +12,17 @@ namespace Task1
 
     public class DllImportExample
     {
-        [DllImport("User32.dll", ExactSpelling = true)]
-        public static extern int MessageBoxA(IntPtr hWnd, string text, string caption, uint type);
+        [DllImport("User32.dll")]
+        public static extern int MessageBox(IntPtr hWnd, string text, string caption, uint type);
     }
 
     class Program
     {
-        const string information = "Тестовой сообщение";
+        const string information = "Тестовое сообщение";
         static void Main(string[] args)
         {
-            DllImportExample.MessageBoxA(IntPtr.Zero, "Тухтаров Марат Ринадович", information, 0);
-            DllImportExample.MessageBoxA(IntPtr.Zero, "Студент компьютерной академии \"ТОП\"", information, 0);
+            DllImportExample.MessageBox(IntPtr.Zero, "Тухтаров Марат Ринадович", information, 0);
+            DllImportExample.MessageBox(IntPtr.Zero, "Студент компьютерной академии \"ТОП\"", information, 0);
             Console.ReadKey();
         }
     }

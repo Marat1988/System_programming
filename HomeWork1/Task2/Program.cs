@@ -25,7 +25,7 @@ namespace Task2
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         public static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, uint wParam, [MarshalAs(UnmanagedType.LPWStr)] string lParam);
         [DllImport("user32.dll", SetLastError = true)]
-        public static extern IntPtr SendMessage(IntPtr hWnd, uint uMsg, uint wParam, int lParam);
+        public static extern IntPtr SendMessage(IntPtr hWnd, uint uMsg, uint wParam, IntPtr lParam);
     }
     class Program
     {
@@ -60,7 +60,7 @@ namespace Task2
         public static void TestApp(IntPtr child)
         {
             Icon icon = Properties.Resources.owner2;
-            int Hicon = icon.ToBitmap().GetHicon().ToInt32();
+            IntPtr hIcon = icon.ToBitmap().GetHicon();
             uint WM_SETTEXT = 0x000C;
             uint WM_SYSCOMMAND = 0x0112;
             uint SC_CLOSE = 0xF060;
@@ -83,7 +83,7 @@ namespace Task2
                             string mgs = Console.ReadLine();
                             TestApi.SendMessage(child, WM_SETTEXT, 0, mgs);
                             break;
-                        case 3: TestApi.SendMessage(child, WM_SETICON, 0, Hicon);
+                        case 3: TestApi.SendMessage(child, WM_SETICON, 0, hIcon);
                             break;
                     }
                 }

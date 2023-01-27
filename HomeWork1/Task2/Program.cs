@@ -20,8 +20,8 @@ namespace Task2
     {
         [DllImport("User32.dll")]
         public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
-        [DllImport("User32.dll")]
-        public static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, uint wParam, StringBuilder lParam);
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, uint wParam, [MarshalAs(UnmanagedType.LPWStr)] string lParam);
     }
     class Program
     {
@@ -71,9 +71,8 @@ namespace Task2
                             break;
                         case 2:
                             Console.Write("Введите сообщение: ");
-                            StringBuilder stringBuilder = new StringBuilder();
-                            stringBuilder.Append(Console.ReadLine());                    
-                            TestApi.SendMessage(child, WM_SETTEXT, 0, stringBuilder);
+                            string mgs = Console.ReadLine();
+                            TestApi.SendMessage(child, WM_SETTEXT, 0, mgs);
                             break;
                     }
                 }

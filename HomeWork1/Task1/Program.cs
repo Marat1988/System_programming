@@ -21,8 +21,8 @@ namespace Task1
         const string information = "Тестовое сообщение";
         static void Main(string[] args)
         {
-            DllImportExample.MessageBox(IntPtr.Zero, "Тухтаров Марат Ринадович", information, 0);
-            DllImportExample.MessageBox(IntPtr.Zero, "Студент компьютерной академии \"ТОП\"", information, 0);
+            DllImportExample.MessageBox(IntPtr.Zero, "Тухтаров Марат Ринадович", information, (uint)0x00000040L);
+            DllImportExample.MessageBox(IntPtr.Zero, "Студент компьютерной академии \"ТОП\"", information, (uint)0x00000040L);
             Console.ReadKey();
         }
     }

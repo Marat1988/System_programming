@@ -1,0 +1,10 @@
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork1\TestApplication\bin\Debug\TestApplication.exe.config
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork1\TestApplication\bin\Debug\TestApplication.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork1\TestApplication\bin\Debug\TestApplication.pdb
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork1\TestApplication\obj\Debug\TestApplication.csproj.AssemblyReference.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork1\TestApplication\obj\Debug\TestApplication.FormTest.resources
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork1\TestApplication\obj\Debug\TestApplication.Properties.Resources.resources
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork1\TestApplication\obj\Debug\TestApplication.csproj.GenerateResource.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork1\TestApplication\obj\Debug\TestApplication.csproj.CoreCompileInputs.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork1\TestApplication\obj\Debug\TestApplication.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork1\TestApplication\obj\Debug\TestApplication.pdb

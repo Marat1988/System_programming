@@ -21,9 +21,7 @@ namespace Task2
         [DllImport("User32.dll")]
         public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
         [DllImport("User32.dll")]
-        public static extern IntPtr SendMessage(IntPtr hWnd, int Msg, int wParam, string lParam);
-        [DllImport("User32.dll")]
-        public static extern IntPtr SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        public static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, uint wParam, StringBuilder lParam);
     }
     class Program
     {
@@ -57,11 +55,10 @@ namespace Task2
         }
         public static void TestApp(IntPtr child)
         {
-            int WM_SETTEXT = 0x000C;
-            int WM_SYSCOMMAND = 0x0112;
-            int SC_CLOSE = 0xF060;
+            uint WM_SETTEXT = 0x000C;
+            uint WM_SYSCOMMAND = 0x0112;
+            uint SC_CLOSE = 0xF060;
             Console.WriteLine("Введите:\n1 - для закрытия окна дочернего приложения;\n2 - для изменения заголовка окна дочернего приложения;\n3 - для выхода.");
-            TestApi.SendMessage(child, 0x0102, 65, 0);
             while (true)
             {
                 if (int.TryParse(Console.ReadLine(), out int chooseUser))
@@ -74,8 +71,9 @@ namespace Task2
                             break;
                         case 2:
                             Console.Write("Введите сообщение: ");
-                            string msg = Console.ReadLine();                          
-                            TestApi.SendMessage(child, WM_SETTEXT, 0, msg);
+                            StringBuilder stringBuilder = new StringBuilder();
+                            stringBuilder.Append(Console.ReadLine());                    
+                            TestApi.SendMessage(child, WM_SETTEXT, 0, stringBuilder);
                             break;
                     }
                 }

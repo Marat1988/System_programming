@@ -1,0 +1,9 @@
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task2\bin\Release\Task2.exe.config
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task2\bin\Release\Task2.exe
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task2\bin\Release\Task2.pdb
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task2\obj\Release\Task2.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task2\obj\Release\Task2.Properties.Resources.resources
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task2\obj\Release\Task2.csproj.GenerateResource.cache
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task2\obj\Release\Task2.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task2\obj\Release\Task2.exe
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task2\obj\Release\Task2.pdb

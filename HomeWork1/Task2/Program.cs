@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Task2.Properties;
 
 namespace Task2
 {
@@ -22,6 +24,8 @@ namespace Task2
         public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         public static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, uint wParam, [MarshalAs(UnmanagedType.LPWStr)] string lParam);
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern IntPtr SendMessage(IntPtr hWnd, uint uMsg, uint wParam, int lParam);
     }
     class Program
     {
@@ -35,7 +39,7 @@ namespace Task2
                 start += TestApp;
                 Console.Title = "Тест api-функций FindWindow и SendMessage";
                 Process p = Process.Start("TestApplication.exe");
-                Console.WriteLine("Для продолжения нажмите любую клавишу......");
+                Console.WriteLine("Жми любую клавишу для продолжения......");
                 Console.ReadKey();
                 IntPtr child = TestApi.FindWindow(null, app);
                 if (child == IntPtr.Zero)
@@ -55,15 +59,20 @@ namespace Task2
         }
         public static void TestApp(IntPtr child)
         {
+            Icon icon = Properties.Resources.owner2;
+            int Hicon = icon.ToBitmap().GetHicon().ToInt32();
             uint WM_SETTEXT = 0x000C;
             uint WM_SYSCOMMAND = 0x0112;
             uint SC_CLOSE = 0xF060;
-            Console.WriteLine("Введите:\n1 - для закрытия окна дочернего приложения;\n2 - для изменения заголовка окна дочернего приложения;\n3 - для выхода.");
+            uint WM_SETICON = 0x0080;
+            Console.WriteLine("Введите:\n1 - для закрытия окна дочернего приложения;\n2 - для изменения заголовка окна дочернего приложения;" +
+                "\n3 - для смены инонки приложения;" +
+                "\n4 - для выхода");
             while (true)
             {
                 if (int.TryParse(Console.ReadLine(), out int chooseUser))
                 {
-                    if (chooseUser == 3)
+                    if (chooseUser == 4)
                         break;
                     switch (chooseUser)
                     {
@@ -73,6 +82,8 @@ namespace Task2
                             Console.Write("Введите сообщение: ");
                             string mgs = Console.ReadLine();
                             TestApi.SendMessage(child, WM_SETTEXT, 0, mgs);
+                            break;
+                        case 3: TestApi.SendMessage(child, WM_SETICON, 0, Hicon);
                             break;
                     }
                 }

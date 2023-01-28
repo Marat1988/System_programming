@@ -1,0 +1,10 @@
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\MainApplication\bin\Debug\MainApplication.exe.config
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\MainApplication\bin\Debug\MainApplication.exe
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\MainApplication\bin\Debug\MainApplication.pdb
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\MainApplication\obj\Debug\MainApplication.Properties.Resources.resources
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\MainApplication\obj\Debug\MainApplication.csproj.GenerateResource.cache
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\MainApplication\obj\Debug\MainApplication.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\MainApplication\obj\Debug\MainApplication.exe
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\MainApplication\obj\Debug\MainApplication.pdb
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\MainApplication\obj\Debug\MainApplication.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\MainApplication\obj\Debug\MainApplication.FormMain.resources

@@ -1,0 +1,10 @@
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\ChildApplication\bin\Debug\ChildApplication.exe.config
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\ChildApplication\bin\Debug\ChildApplication.exe
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\ChildApplication\bin\Debug\ChildApplication.pdb
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\ChildApplication\obj\Debug\ChildApplication.FormChild.resources
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\ChildApplication\obj\Debug\ChildApplication.Properties.Resources.resources
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\ChildApplication\obj\Debug\ChildApplication.csproj.GenerateResource.cache
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\ChildApplication\obj\Debug\ChildApplication.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\ChildApplication\obj\Debug\ChildApplication.exe
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\ChildApplication\obj\Debug\ChildApplication.pdb
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\ChildApplication\obj\Debug\ChildApplication.csproj.AssemblyReference.cache

@@ -1,0 +1,10 @@
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\MainApplication\bin\Release\MainApplication.exe.config
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\MainApplication\bin\Release\MainApplication.exe
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\MainApplication\bin\Release\MainApplication.pdb
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\MainApplication\obj\Release\MainApplication.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\MainApplication\obj\Release\MainApplication.FormMain.resources
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\MainApplication\obj\Release\MainApplication.Properties.Resources.resources
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\MainApplication\obj\Release\MainApplication.csproj.GenerateResource.cache
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\MainApplication\obj\Release\MainApplication.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\MainApplication\obj\Release\MainApplication.exe
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork1\Task4\MainApplication\obj\Release\MainApplication.pdb

@@ -33,8 +33,7 @@
 
 <b>Полезные ссылки</b><br>
 
-Чтобы вникнуть в тему рекомендую посмотреть видео:
 <ol>
 <li>Помогло в выполнении 4 задания: https://web-answers.ru/c/c-poluchit-vse-jelementy-upravlenija-findwindowex.html</li>
-<li>Сайт, где можно узнать, как перевести API функцию на язык C# https://www.pinvoke.net/default.aspx/user32/EnumChildWindows.html</li>
+<li>Сайт, где можно узнать, как перевести API функцию на язык C#: https://www.pinvoke.net/default.aspx/user32/EnumChildWindows.html</li>
 </ol>

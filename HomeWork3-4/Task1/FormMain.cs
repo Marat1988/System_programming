@@ -20,6 +20,7 @@ namespace Task1
         {
             InitializeComponent();
         }
+
         private void buttonStartCalc_Click(object sender, EventArgs e)
         {
             myProcess = new Process();
@@ -28,6 +29,7 @@ namespace Task1
             myProcess.Exited += MyProcess_Exited;
             myProcess.Start();
         }
+
         private void MyProcess_Exited(object sender, EventArgs e)
         {
             MessageBox.Show($"Exit time: {myProcess.ExitTime}\nExit code: {myProcess.ExitCode}", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);

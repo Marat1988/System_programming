@@ -28,13 +28,13 @@
 
 # 
 
-<b>Примечания</b>
+<b>Примечания.</b>
 
 В задании 4 хранится два проекта. Запускаем основной проект из папки MainApplication<br>
 
 # 
 
-<b>Полезные ссылки</b><br>
+<b>Полезные ссылки.</b><br>
 
 <ol>
 <li>Помогло в выполнении 4 задания: https://web-answers.ru/c/c-poluchit-vse-jelementy-upravlenija-findwindowex.html</li>

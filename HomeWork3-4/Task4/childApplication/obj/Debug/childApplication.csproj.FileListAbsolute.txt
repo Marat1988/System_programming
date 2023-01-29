@@ -1,0 +1,7 @@
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork3-4\Task4\childApplication\bin\Debug\childApplication.exe.config
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork3-4\Task4\childApplication\bin\Debug\childApplication.exe
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork3-4\Task4\childApplication\bin\Debug\childApplication.pdb
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork3-4\Task4\childApplication\obj\Debug\childApplication.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork3-4\Task4\childApplication\obj\Debug\childApplication.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork3-4\Task4\childApplication\obj\Debug\childApplication.exe
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork3-4\Task4\childApplication\obj\Debug\childApplication.pdb

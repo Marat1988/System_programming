@@ -14,12 +14,11 @@ namespace childApplication
         {
             if (args.Length > 0)
             {
-                Regex regex = new Regex(args[1], RegexOptions.IgnoreCase);
                 string textFile = File.ReadAllText(args[0]);
-                string[] mas = textFile.Split(' ');
-                int count = mas.Where(word => regex.IsMatch("Привет")).Count();
-                Console.WriteLine($"Заданное слово {args[1]} встречается в файле {args[0]} {count} раз");
-            }           
+                Regex REX = new Regex(args[1], RegexOptions.IgnoreCase);
+                MatchCollection RTQ = REX.Matches(textFile);
+                Console.WriteLine($"Заданное слово {args[1]} встречается в файле {args[0]} {RTQ.Count} раз");
+            }
             Console.WriteLine("Для выхода жми любую клавишу......");
             Console.ReadKey();
         }

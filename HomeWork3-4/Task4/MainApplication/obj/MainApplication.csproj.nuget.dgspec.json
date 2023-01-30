@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\Documents\\GitHub\\System_programming\\HomeWork3-4\\Task4\\MainApplication\\MainApplication.csproj": {}
+    "C:\\Users\\Mss.TRIBRATA\\Documents\\GitHub\\System_programming\\HomeWork3-4\\Task4\\MainApplication\\MainApplication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\Documents\\GitHub\\System_programming\\HomeWork3-4\\Task4\\MainApplication\\MainApplication.csproj": {
+    "C:\\Users\\Mss.TRIBRATA\\Documents\\GitHub\\System_programming\\HomeWork3-4\\Task4\\MainApplication\\MainApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Documents\\GitHub\\System_programming\\HomeWork3-4\\Task4\\MainApplication\\MainApplication.csproj",
+        "projectUniqueName": "C:\\Users\\Mss.TRIBRATA\\Documents\\GitHub\\System_programming\\HomeWork3-4\\Task4\\MainApplication\\MainApplication.csproj",
         "projectName": "MainApplication",
-        "projectPath": "C:\\Users\\HP\\Documents\\GitHub\\System_programming\\HomeWork3-4\\Task4\\MainApplication\\MainApplication.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Documents\\GitHub\\System_programming\\HomeWork3-4\\Task4\\MainApplication\\obj\\",
+        "projectPath": "C:\\Users\\Mss.TRIBRATA\\Documents\\GitHub\\System_programming\\HomeWork3-4\\Task4\\MainApplication\\MainApplication.csproj",
+        "packagesPath": "C:\\Users\\Mss.TRIBRATA\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mss.TRIBRATA\\Documents\\GitHub\\System_programming\\HomeWork3-4\\Task4\\MainApplication\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mss.TRIBRATA\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,7 +57,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.412\\RuntimeIdentifierGraph.json"
         }
       }
     }

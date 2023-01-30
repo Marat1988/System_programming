@@ -39,26 +39,28 @@ namespace MainApplication
             // 
             // textBoxPathToTheFile
             // 
-            this.textBoxPathToTheFile.Location = new System.Drawing.Point(217, 32);
+            this.textBoxPathToTheFile.Location = new System.Drawing.Point(281, 44);
+            this.textBoxPathToTheFile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxPathToTheFile.Name = "textBoxPathToTheFile";
-            this.textBoxPathToTheFile.Size = new System.Drawing.Size(327, 23);
+            this.textBoxPathToTheFile.Size = new System.Drawing.Size(373, 27);
             this.textBoxPathToTheFile.TabIndex = 0;
             this.textBoxPathToTheFile.TextChanged += new System.EventHandler(this.textBoxPathToTheFile_TextChanged);
             // 
             // labelPathToTheFile
             // 
             this.labelPathToTheFile.AutoSize = true;
-            this.labelPathToTheFile.Location = new System.Drawing.Point(12, 35);
+            this.labelPathToTheFile.Location = new System.Drawing.Point(14, 47);
             this.labelPathToTheFile.Name = "labelPathToTheFile";
-            this.labelPathToTheFile.Size = new System.Drawing.Size(199, 15);
+            this.labelPathToTheFile.Size = new System.Drawing.Size(248, 20);
             this.labelPathToTheFile.TabIndex = 1;
             this.labelPathToTheFile.Text = "Параметр 1: укажите путь к файлу:";
             // 
             // buttonOpenFile
             // 
-            this.buttonOpenFile.Location = new System.Drawing.Point(550, 32);
+            this.buttonOpenFile.Location = new System.Drawing.Point(675, 42);
+            this.buttonOpenFile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonOpenFile.Name = "buttonOpenFile";
-            this.buttonOpenFile.Size = new System.Drawing.Size(94, 23);
+            this.buttonOpenFile.Size = new System.Drawing.Size(107, 31);
             this.buttonOpenFile.TabIndex = 2;
             this.buttonOpenFile.Text = "Обзор";
             this.buttonOpenFile.UseVisualStyleBackColor = true;
@@ -66,26 +68,28 @@ namespace MainApplication
             // 
             // textBoxWord
             // 
-            this.textBoxWord.Location = new System.Drawing.Point(290, 70);
+            this.textBoxWord.Location = new System.Drawing.Point(374, 94);
+            this.textBoxWord.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxWord.Name = "textBoxWord";
-            this.textBoxWord.Size = new System.Drawing.Size(136, 23);
+            this.textBoxWord.Size = new System.Drawing.Size(155, 27);
             this.textBoxWord.TabIndex = 3;
             this.textBoxWord.TextChanged += new System.EventHandler(this.textBoxPathToTheFile_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 73);
+            this.label1.Location = new System.Drawing.Point(14, 97);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(272, 15);
+            this.label1.Size = new System.Drawing.Size(342, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Параметр 2: укажите слово для поиска в файле:";
             // 
             // buttonRunProcess
             // 
-            this.buttonRunProcess.Location = new System.Drawing.Point(12, 109);
+            this.buttonRunProcess.Location = new System.Drawing.Point(14, 145);
+            this.buttonRunProcess.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonRunProcess.Name = "buttonRunProcess";
-            this.buttonRunProcess.Size = new System.Drawing.Size(182, 56);
+            this.buttonRunProcess.Size = new System.Drawing.Size(208, 75);
             this.buttonRunProcess.TabIndex = 5;
             this.buttonRunProcess.Text = "Запустить дочерний процесс";
             this.buttonRunProcess.UseVisualStyleBackColor = true;
@@ -93,15 +97,16 @@ namespace MainApplication
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(772, 450);
+            this.ClientSize = new System.Drawing.Size(882, 600);
             this.Controls.Add(this.buttonRunProcess);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxWord);
             this.Controls.Add(this.buttonOpenFile);
             this.Controls.Add(this.labelPathToTheFile);
             this.Controls.Add(this.textBoxPathToTheFile);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormMain";
             this.Text = "Тестовое приложение. Запуск дочернего процесса с аргументами";
             this.ResumeLayout(false);

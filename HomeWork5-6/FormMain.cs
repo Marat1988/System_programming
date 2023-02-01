@@ -28,37 +28,72 @@ namespace HomeWork5_6
 
         private void buttonRunThread_Click(object sender, EventArgs e)
         {
-            ThreadStart threadStart1 = new ThreadStart(thread1);
-            Thread threadNumber1 = new Thread(threadStart1);
-            threadNumber1.Start();
+            //Простые числа
+            Thread threadPrimeNumber = new Thread(PrimeNumber);
+            threadPrimeNumber.IsBackground = true;
+            threadPrimeNumber.Start();
+            //Числа фибиначчи
+            Thread threadFibinacciNumber = new Thread(FibinacciNumber);
+            threadFibinacciNumber.IsBackground = true;
+            threadFibinacciNumber.Start();
         }
 
-        private void thread1()
+        private void PrimeNumber()
         {
-            int beginRange = int.Parse(textBoxBeginRange.Text);
-            int endRange = int.Parse(textBoxEndRange.Text);
-            for (int i = beginRange; i < endRange; i++)
+            bool infinite = false;
+            ulong beginRange = 0;
+            ulong endRange = 0;
+            if (textBoxBeginRange.Text.Length==0)
+                beginRange = 2;
+            else
+                beginRange = ulong.Parse(textBoxBeginRange.Text);
+
+            if (textBoxEndRange.Text.Length > 0)
+                endRange = ulong.Parse(textBoxEndRange.Text);
+            else
+                infinite = true;
+
+            while (infinite == true || Math.Min(beginRange, endRange) <= Math.Max(beginRange, endRange))
             {
-                if (checkPrimeNumber(i))
+                Thread.Sleep(1000);
+                if (checkPrimeNumber(beginRange))
                 {
                     listBoxThread1.Invoke(new Action(() =>
                     {
-                        listBoxThread1.Items.Add(i);
-                    }));               
+                        listBoxThread1.Items.Add(beginRange);
+                    }));
                 }
+                beginRange++;
+            }
+        }
+        private void FibinacciNumber()
+        {
+            ulong number = 1;
+            ulong counter = 2;
+            while (true)
+            {
+                Thread.Sleep(1000);
+                number = Fibonachi(counter);
+                listBoxThread2.Invoke(new Action(() =>
+                {
+                    listBoxThread2.Items.Add(number);
+                }));
+                counter++;
             }
         }
 
-        /// <summary>
-        /// Функция, которая проверяет, является ли число простым
-        /// </summary>
-        /// <param name="number">Вводимое число</param>
-        /// <returns>ИСТИНА, если число простое. В противном случае ЛОЖЬ</returns>
-        private bool checkPrimeNumber(int number)
+        private ulong Fibonachi(ulong n)
+        {
+            if (n == 0 || n == 1) return n;
+
+            return Fibonachi(n - 1) + Fibonachi(n - 2);
+        }
+
+        private bool checkPrimeNumber(ulong number)
         {
             if (number < 2)
                 throw new ArgumentException("Число должно быть больше либо равно 2");
-            for (int i = 2; i < number; i++)
+            for (ulong i = 2; i < number; i++)
             {
                 if (number % i == 0)
                 {

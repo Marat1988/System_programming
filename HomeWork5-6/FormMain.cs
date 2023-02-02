@@ -28,15 +28,20 @@ namespace HomeWork5_6
         }
         private void buttonRunThread_Click(object sender, EventArgs e)
         {
-            //Простые числа
-            threadPrimeNumber = new Thread(PrimeNumber);
-            threadPrimeNumber.Start();
-            //Числа фибиначчи
-            threadFibinacciNumber = new Thread(FibinacciNumber);
-            threadFibinacciNumber.Start();
+            if (threadPrimeNumber==null && threadFibinacciNumber == null)
+            {
+                //Простые числа
+                threadPrimeNumber = new Thread(PrimeNumber);
+                threadPrimeNumber.Start();
+                //Числа фибиначчи
+                threadFibinacciNumber = new Thread(FibinacciNumber);
+                threadFibinacciNumber.Start();
+            }
         }
+        //Простые числа
         private void PrimeNumber()
         {
+
             bool infinite = false;
             ulong beginRange = 0;
             ulong endRange = 0;
@@ -52,24 +57,27 @@ namespace HomeWork5_6
 
             while (infinite == true || Math.Min(beginRange, endRange) <= Math.Max(beginRange, endRange))
             {
-                Thread.Sleep(1000);
                 if (checkPrimeNumber(beginRange))
                 {
+                    
                     listBoxThread1.Invoke(new Action(() =>
                     {
+                        //Thread.Sleep(1000);
                         listBoxThread1.Items.Add(beginRange);
                     }));
+
                 }
                 beginRange++;
             }
         }
+        //Числа Фибоначчи
         private void FibinacciNumber()
         {
             ulong number = 1;
             ulong counter = 2;
             while (true)
             {
-                Thread.Sleep(1000);
+                //Thread.Sleep(1000);
                 number = Fibonachi(counter);
                 listBoxThread2.Invoke(new Action(() =>
                 {
@@ -78,47 +86,54 @@ namespace HomeWork5_6
                 counter++;
             }
         }
+        //Остановка потока
         private void buttonAbortPrimeNumber_Click(object sender, EventArgs e)
         {
             if (threadPrimeNumber?.ThreadState == ThreadState.WaitSleepJoin)
                 threadPrimeNumber?.Abort();
         }
+        //Остановка потока
         private void buttonAbortFibinacciNumber_Click(object sender, EventArgs e)
         {
-            if (threadFibinacciNumber?.ThreadState == ThreadState.WaitSleepJoin)
+            //if (threadFibinacciNumber?.ThreadState == ThreadState.WaitSleepJoin)
                 threadFibinacciNumber?.Abort();           
         }
+        //Приостановка потока
         [Obsolete]
         private void buttonSuppentPrimeNumber_Click(object sender, EventArgs e)
         {
             if (threadPrimeNumber?.ThreadState == ThreadState.WaitSleepJoin)
                 threadPrimeNumber?.Suspend();
         }
+        //Приостановка потока
         [Obsolete]
         private void buttonSuppentFiibinacciNumber_Click(object sender, EventArgs e)
         {
             if (threadFibinacciNumber?.ThreadState == ThreadState.WaitSleepJoin)
                 threadFibinacciNumber?.Suspend();
         }
+        //Возобновление работы потока
         [Obsolete]
         private void buttonResumePrimeNumber_Click(object sender, EventArgs e)
         {
             if (threadPrimeNumber?.ThreadState == ThreadState.Suspended)
                 threadPrimeNumber?.Resume();
         }
+        //Возобновление работы потока
         [Obsolete]
         private void buttonResumeFiibinacciNumber_Click(object sender, EventArgs e)
         {
             if (threadFibinacciNumber?.ThreadState == ThreadState.Suspended)
                 threadFibinacciNumber?.Resume();
         }
-
+        //Функция числа Фибоначчи
         private ulong Fibonachi(ulong n)
         {
             if (n == 0 || n == 1) return n;
 
             return Fibonachi(n - 1) + Fibonachi(n - 2);
         }
+        //Функция проверки является ли число простым
         private bool checkPrimeNumber(ulong number)
         {
             if (number < 2)
@@ -132,24 +147,23 @@ namespace HomeWork5_6
             }
             return true;
         }
-        private void button1_Click(object sender, EventArgs e)
+
+        private bool checkStateForClosedThread(ref Thread thread)
         {
-            MessageBox.Show(threadPrimeNumber.ThreadState.ToString());
+            return (thread.ThreadState == ThreadState.WaitSleepJoin || thread.ThreadState == ThreadState.Running);
         }
 
-        [Obsolete]
-        private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (threadPrimeNumber?.ThreadState == ThreadState.Suspended)
+            if (!((threadFibinacciNumber == null || threadFibinacciNumber == null)) && (checkStateForClosedThread(ref threadPrimeNumber) && checkStateForClosedThread(ref threadFibinacciNumber)))
             {
-                threadPrimeNumber?.Resume();
+                MessageBox.Show("Потоки не завершены. Завершите поток");
+                e.Cancel = true;
             }
-            threadPrimeNumber?.Abort();
-            if (threadFibinacciNumber?.ThreadState == ThreadState.Suspended)
-            {
-                threadFibinacciNumber?.Resume();
-            }
-            threadFibinacciNumber?.Abort();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             MessageBox.Show(threadPrimeNumber.ThreadState.ToString());
         }
     }

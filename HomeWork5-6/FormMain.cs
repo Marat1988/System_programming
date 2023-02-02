@@ -13,11 +13,12 @@ namespace HomeWork5_6
 {
     public partial class FormMain : Form
     {
+        Thread threadPrimeNumber;
+        Thread threadFibinacciNumber;
         public FormMain()
         {
             InitializeComponent();
         }
-
         private void textBoxBeginRange_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)  //цифры и клавиша BackSpace
@@ -25,19 +26,15 @@ namespace HomeWork5_6
                 e.Handled = true;
             }
         }
-
         private void buttonRunThread_Click(object sender, EventArgs e)
         {
             //Простые числа
-            Thread threadPrimeNumber = new Thread(PrimeNumber);
-            threadPrimeNumber.IsBackground = true;
+            threadPrimeNumber = new Thread(PrimeNumber);
             threadPrimeNumber.Start();
             //Числа фибиначчи
-            Thread threadFibinacciNumber = new Thread(FibinacciNumber);
-            threadFibinacciNumber.IsBackground = true;
+            threadFibinacciNumber = new Thread(FibinacciNumber);
             threadFibinacciNumber.Start();
         }
-
         private void PrimeNumber()
         {
             bool infinite = false;
@@ -81,6 +78,40 @@ namespace HomeWork5_6
                 counter++;
             }
         }
+        private void buttonAbortPrimeNumber_Click(object sender, EventArgs e)
+        {
+            if (threadPrimeNumber?.ThreadState == ThreadState.WaitSleepJoin)
+                threadPrimeNumber?.Abort();
+        }
+        private void buttonAbortFibinacciNumber_Click(object sender, EventArgs e)
+        {
+            if (threadFibinacciNumber?.ThreadState == ThreadState.WaitSleepJoin)
+                threadFibinacciNumber?.Abort();           
+        }
+        [Obsolete]
+        private void buttonSuppentPrimeNumber_Click(object sender, EventArgs e)
+        {
+            if (threadPrimeNumber?.ThreadState == ThreadState.WaitSleepJoin)
+                threadPrimeNumber?.Suspend();
+        }
+        [Obsolete]
+        private void buttonSuppentFiibinacciNumber_Click(object sender, EventArgs e)
+        {
+            if (threadFibinacciNumber?.ThreadState == ThreadState.WaitSleepJoin)
+                threadFibinacciNumber?.Suspend();
+        }
+        [Obsolete]
+        private void buttonResumePrimeNumber_Click(object sender, EventArgs e)
+        {
+            if (threadPrimeNumber?.ThreadState == ThreadState.Suspended)
+                threadPrimeNumber?.Resume();
+        }
+        [Obsolete]
+        private void buttonResumeFiibinacciNumber_Click(object sender, EventArgs e)
+        {
+            if (threadFibinacciNumber?.ThreadState == ThreadState.Suspended)
+                threadFibinacciNumber?.Resume();
+        }
 
         private ulong Fibonachi(ulong n)
         {
@@ -88,7 +119,6 @@ namespace HomeWork5_6
 
             return Fibonachi(n - 1) + Fibonachi(n - 2);
         }
-
         private bool checkPrimeNumber(ulong number)
         {
             if (number < 2)
@@ -101,6 +131,26 @@ namespace HomeWork5_6
                 }
             }
             return true;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(threadPrimeNumber.ThreadState.ToString());
+        }
+
+        [Obsolete]
+        private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (threadPrimeNumber?.ThreadState == ThreadState.Suspended)
+            {
+                threadPrimeNumber?.Resume();
+            }
+            threadPrimeNumber?.Abort();
+            if (threadFibinacciNumber?.ThreadState == ThreadState.Suspended)
+            {
+                threadFibinacciNumber?.Resume();
+            }
+            threadFibinacciNumber?.Abort();
+            MessageBox.Show(threadPrimeNumber.ThreadState.ToString());
         }
     }
 }

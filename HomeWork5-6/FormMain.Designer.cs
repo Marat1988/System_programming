@@ -45,6 +45,8 @@ namespace HomeWork5_6
             this.buttonResumeFiibinacciNumber = new System.Windows.Forms.Button();
             this.buttonRunPrimeNumber = new System.Windows.Forms.Button();
             this.textBoxBeginRange = new System.Windows.Forms.TextBox();
+            this.buttonRestartPrimeNumber = new System.Windows.Forms.Button();
+            this.buttonRestartFibinacciNumber = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBoxThreadPrimeNumber
@@ -100,7 +102,7 @@ namespace HomeWork5_6
             this.buttonRunFibinacciNumber.Name = "buttonRunFibinacciNumber";
             this.buttonRunFibinacciNumber.Size = new System.Drawing.Size(166, 24);
             this.buttonRunFibinacciNumber.TabIndex = 6;
-            this.buttonRunFibinacciNumber.Text = "Run\\Restart";
+            this.buttonRunFibinacciNumber.Text = "Run";
             this.buttonRunFibinacciNumber.UseVisualStyleBackColor = true;
             this.buttonRunFibinacciNumber.Click += new System.EventHandler(this.buttonRunFibinacciNumber_Click);
             // 
@@ -135,7 +137,7 @@ namespace HomeWork5_6
             // 
             // buttonAbortFibinacciNumber
             // 
-            this.buttonAbortFibinacciNumber.Location = new System.Drawing.Point(445, 436);
+            this.buttonAbortFibinacciNumber.Location = new System.Drawing.Point(445, 435);
             this.buttonAbortFibinacciNumber.Name = "buttonAbortFibinacciNumber";
             this.buttonAbortFibinacciNumber.Size = new System.Drawing.Size(166, 24);
             this.buttonAbortFibinacciNumber.TabIndex = 10;
@@ -155,7 +157,7 @@ namespace HomeWork5_6
             // 
             // buttonSuppentFiibinacciNumber
             // 
-            this.buttonSuppentFiibinacciNumber.Location = new System.Drawing.Point(445, 467);
+            this.buttonSuppentFiibinacciNumber.Location = new System.Drawing.Point(445, 465);
             this.buttonSuppentFiibinacciNumber.Name = "buttonSuppentFiibinacciNumber";
             this.buttonSuppentFiibinacciNumber.Size = new System.Drawing.Size(166, 25);
             this.buttonSuppentFiibinacciNumber.TabIndex = 12;
@@ -175,7 +177,7 @@ namespace HomeWork5_6
             // 
             // buttonResumeFiibinacciNumber
             // 
-            this.buttonResumeFiibinacciNumber.Location = new System.Drawing.Point(445, 498);
+            this.buttonResumeFiibinacciNumber.Location = new System.Drawing.Point(445, 496);
             this.buttonResumeFiibinacciNumber.Name = "buttonResumeFiibinacciNumber";
             this.buttonResumeFiibinacciNumber.Size = new System.Drawing.Size(166, 25);
             this.buttonResumeFiibinacciNumber.TabIndex = 14;
@@ -189,7 +191,7 @@ namespace HomeWork5_6
             this.buttonRunPrimeNumber.Name = "buttonRunPrimeNumber";
             this.buttonRunPrimeNumber.Size = new System.Drawing.Size(166, 24);
             this.buttonRunPrimeNumber.TabIndex = 16;
-            this.buttonRunPrimeNumber.Text = "Run\\Restart";
+            this.buttonRunPrimeNumber.Text = "Run";
             this.buttonRunPrimeNumber.UseVisualStyleBackColor = true;
             this.buttonRunPrimeNumber.Click += new System.EventHandler(this.buttonRunPrimeNumber_Click);
             // 
@@ -203,11 +205,33 @@ namespace HomeWork5_6
             this.textBoxBeginRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxBeginRange.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxBeginRange_KeyPress);
             // 
+            // buttonRestartPrimeNumber
+            // 
+            this.buttonRestartPrimeNumber.Location = new System.Drawing.Point(15, 527);
+            this.buttonRestartPrimeNumber.Name = "buttonRestartPrimeNumber";
+            this.buttonRestartPrimeNumber.Size = new System.Drawing.Size(166, 24);
+            this.buttonRestartPrimeNumber.TabIndex = 18;
+            this.buttonRestartPrimeNumber.Text = "Restart";
+            this.buttonRestartPrimeNumber.UseVisualStyleBackColor = true;
+            this.buttonRestartPrimeNumber.Click += new System.EventHandler(this.buttonRestartPrimeNumber_Click);
+            // 
+            // buttonRestartFibinacciNumber
+            // 
+            this.buttonRestartFibinacciNumber.Location = new System.Drawing.Point(445, 527);
+            this.buttonRestartFibinacciNumber.Name = "buttonRestartFibinacciNumber";
+            this.buttonRestartFibinacciNumber.Size = new System.Drawing.Size(166, 24);
+            this.buttonRestartFibinacciNumber.TabIndex = 19;
+            this.buttonRestartFibinacciNumber.Text = "Restart";
+            this.buttonRestartFibinacciNumber.UseVisualStyleBackColor = true;
+            this.buttonRestartFibinacciNumber.Click += new System.EventHandler(this.buttonRestartFibinacciNumber_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 531);
+            this.ClientSize = new System.Drawing.Size(695, 654);
+            this.Controls.Add(this.buttonRestartFibinacciNumber);
+            this.Controls.Add(this.buttonRestartPrimeNumber);
             this.Controls.Add(this.textBoxBeginRange);
             this.Controls.Add(this.buttonRunPrimeNumber);
             this.Controls.Add(this.buttonResumeFiibinacciNumber);
@@ -250,6 +274,8 @@ namespace HomeWork5_6
         private System.Windows.Forms.Button buttonResumeFiibinacciNumber;
         private System.Windows.Forms.Button buttonRunPrimeNumber;
         private System.Windows.Forms.TextBox textBoxBeginRange;
+        private System.Windows.Forms.Button buttonRestartPrimeNumber;
+        private System.Windows.Forms.Button buttonRestartFibinacciNumber;
     }
 }
 

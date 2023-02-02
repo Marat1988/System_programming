@@ -30,11 +30,12 @@ namespace HomeWork5_6
         //Запуск потока или перезапуска потока
         private void buttonRunPrimeNumber_Click(object sender, EventArgs e)
         {
-            if ((threadPrimeNumber == null) || (threadPrimeNumber.ThreadState == ThreadState.Aborted))
-            {
+            if ((threadPrimeNumber == null) || (threadPrimeNumber.ThreadState == ThreadState.Aborted)
+                || (threadPrimeNumber.ThreadState == ThreadState.Stopped))
+            {             
                 //Простые числа
                 threadPrimeNumber = new Thread(PrimeNumber);
-                threadPrimeNumber.Start();
+                threadPrimeNumber?.Start();
             }
         }
         //Простые числа
@@ -52,13 +53,14 @@ namespace HomeWork5_6
                 endRange = ulong.Parse(textBoxEndRange.Text);
             else
                 infinite = true;
-
-            while (infinite == true || Math.Min(beginRange, endRange) <= Math.Max(beginRange, endRange))
+            beginRange = Math.Min(beginRange, endRange);
+            endRange = Math.Max(beginRange, endRange);
+            while (infinite == true || beginRange <= endRange)
             {
                 if (checkPrimeNumber(beginRange))
                 {
                     Thread.Sleep(1000);
-                    listBoxThreadPrimeNumber.Invoke(new Action(() =>
+                    Invoke(new Action(() =>
                     {
                         listBoxThreadPrimeNumber.Items.Add(beginRange);
                     }));
@@ -70,14 +72,14 @@ namespace HomeWork5_6
         //Остановка потока
         private void buttonAbortPrimeNumber_Click(object sender, EventArgs e)
         {
-            if (checkStateForSuppendAbortThread(ref threadPrimeNumber))
+            if (threadPrimeNumber?.IsAlive == true)
                 threadPrimeNumber?.Abort();
         }
         //Приостановка потока
         [Obsolete]
         private void buttonSuppentPrimeNumber_Click(object sender, EventArgs e)
         {
-            if (checkStateForSuppendAbortThread(ref threadPrimeNumber))
+            if (threadPrimeNumber?.IsAlive == true)
                 threadPrimeNumber?.Suspend();
         }
         //Возобновление работы потока
@@ -87,11 +89,21 @@ namespace HomeWork5_6
             if (threadPrimeNumber?.ThreadState == ThreadState.Suspended)
                 threadPrimeNumber?.Resume();
         }
+        //Рестарт потока
+        private void buttonRestartPrimeNumber_Click(object sender, EventArgs e)
+        {
+            if (threadPrimeNumber?.ThreadState != ThreadState.Suspended)
+            {
+                buttonAbortPrimeNumber_Click(sender, e); //Вырубаем топок
+                buttonRunPrimeNumber_Click(sender, e); //Перезапускаем поток
+            }
+        }
         /************************************Числа Фибоначчи************************************/
         //Запуск потока или перезапуска потока
         private void buttonRunFibinacciNumber_Click(object sender, EventArgs e)
         {
-            if ((threadFibinacciNumber == null) || (threadFibinacciNumber.ThreadState == ThreadState.Aborted))
+            if ((threadFibinacciNumber == null) || (threadFibinacciNumber.ThreadState == ThreadState.Aborted)
+                || (threadFibinacciNumber.ThreadState == ThreadState.Running))
             {
                 //Числа фибиначчи
                 threadFibinacciNumber = new Thread(FibinacciNumber);
@@ -107,7 +119,7 @@ namespace HomeWork5_6
             {
                 Thread.Sleep(1000);
                 number = Fibonachi(counter);
-                listBoxThreadFibinacciNumber.Invoke(new Action(() =>
+                Invoke(new Action(() =>
                 {
                     listBoxThreadFibinacciNumber.Items.Add(number);
                 }));
@@ -117,14 +129,14 @@ namespace HomeWork5_6
         //Остановка потока
         private void buttonAbortFibinacciNumber_Click(object sender, EventArgs e)
         {
-            if (checkStateForSuppendAbortThread(ref threadFibinacciNumber))
+            if (threadFibinacciNumber?.IsAlive == true)
                 threadFibinacciNumber?.Abort();           
         }
         //Приостановка потока
         [Obsolete]
         private void buttonSuppentFiibinacciNumber_Click(object sender, EventArgs e)
         {
-            if (checkStateForSuppendAbortThread(ref threadFibinacciNumber))
+            if (threadFibinacciNumber?.IsAlive == true)
                 threadFibinacciNumber?.Suspend();
         }
         //Возобновление работы потока
@@ -133,6 +145,15 @@ namespace HomeWork5_6
         {
             if (threadFibinacciNumber?.ThreadState == ThreadState.Suspended)
                 threadFibinacciNumber?.Resume();
+        }
+        //Рестарт потока
+        private void buttonRestartFibinacciNumber_Click(object sender, EventArgs e)
+        {
+            if (threadFibinacciNumber?.ThreadState != ThreadState.Suspended)
+            {
+                buttonAbortFibinacciNumber_Click(sender, e); //Вырубаем поток
+                buttonRunFibinacciNumber_Click(sender, e); //Закускаем потока
+            }
         }
         /************************************Вспомогательные функции************************************/
         //Функция числа Фибоначчи
@@ -156,15 +177,10 @@ namespace HomeWork5_6
             }
             return true;
         }
-        //Функция проверки состояния потока для завершения (abort) или приостановки (Suspend) потока
-        private bool checkStateForSuppendAbortThread(ref Thread thread)
-        {
-            return (thread?.ThreadState == ThreadState.WaitSleepJoin || thread?.ThreadState == ThreadState.Running);
-        }
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if ((threadPrimeNumber != null || threadFibinacciNumber != null) && (checkStateForSuppendAbortThread(ref threadPrimeNumber) || checkStateForSuppendAbortThread(ref threadFibinacciNumber)))
+            if ((threadPrimeNumber != null || threadFibinacciNumber != null) && (threadPrimeNumber?.IsAlive==true || threadFibinacciNumber?.IsAlive==true))
             {
                 MessageBox.Show("Потоки не завершены. Завершите поток");
                 e.Cancel = true;

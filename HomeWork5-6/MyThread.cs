@@ -12,62 +12,57 @@ namespace HomeWork5_6
         private Thread thread;
         private Action del;
 
-        public Thread Thread { get => thread; set => thread = value; }
-
         public MyThread(Action del)
         {
             this.del += del;
         }
 
-
         public Thread ThreadInfo
         {
             get => thread;
         }
-
         //Запуск
         public void Run()
         {
-            if ((Thread == null) || (Thread.ThreadState == ThreadState.Aborted)
-                || (Thread.ThreadState == ThreadState.Stopped))
+            if ((thread == null) || (thread.ThreadState == ThreadState.Aborted)
+                || (thread.ThreadState == ThreadState.Stopped))
             {
                 ThreadStart threadStart = new ThreadStart(del);
                 //Простые числа
-                Thread = new Thread(threadStart);
-                Thread?.Start();
+                thread = new Thread(threadStart);
+                thread?.Start();
             }
         }
-
         //Остановка потока
         public void Abort()
         {
-            if (Thread?.IsAlive == true)
-                Thread?.Abort();
+            if (thread?.IsAlive == true && thread?.ThreadState != ThreadState.Suspended)
+                thread?.Abort();
         }
         //Приостановка потока
         [Obsolete]
         public void Suppent()
         {
-            if (Thread?.IsAlive == true)
-                Thread?.Suspend();
+            if (thread?.IsAlive == true)
+                thread?.Suspend();
         }
         //Возобновление работы потока
         [Obsolete]
         public void Resume()
         {
-            if (Thread?.ThreadState == ThreadState.Suspended)
-                Thread?.Resume();
+            if (thread?.ThreadState == ThreadState.Suspended)
+                thread?.Resume();
         }
         //Рестарт потока
         public void Restart()
         {
-            if (Thread?.ThreadState != ThreadState.Suspended)
+            if (thread?.ThreadState != ThreadState.Suspended)
             {
                 Abort();
                 Run();
             }
         }
 
-
+        public bool checkState() => (thread != null) && (thread?.IsAlive == true);       
     }
 }

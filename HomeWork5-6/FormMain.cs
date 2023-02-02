@@ -1,28 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HomeWork5_6
 {
     public partial class FormMain : Form
     {
-        Thread threadPrimeNumber;
-        Thread threadFibinacciNumber;
-        MyThread fibinacci;
+        MyThread fibinacciThread;
+        MyThread primeNumberThread;
 
         public FormMain()
         {
             InitializeComponent();
-            fibinacci = new MyThread(FibinacciNumber);
+            fibinacciThread = new MyThread(FibinacciNumber);
+            primeNumberThread = new MyThread(PrimeNumber);
         }
-
 
         private void textBoxBeginRange_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -31,25 +23,46 @@ namespace HomeWork5_6
                 e.Handled = true;
             }
         }
-        /************************************Простые числа************************************/
-        //Запуск потока или перезапуска потока
-        private void buttonRunPrimeNumber_Click(object sender, EventArgs e)
+
+        private void buttonRunPrimeNumber_Click(object sender, EventArgs e) => primeNumberThread.Run();
+
+        private void buttonAbortPrimeNumber_Click(object sender, EventArgs e) => primeNumberThread.Abort();
+
+        [Obsolete]
+        private void buttonSuppentPrimeNumber_Click(object sender, EventArgs e) => primeNumberThread.Suppent();
+
+        [Obsolete]
+        private void buttonResumePrimeNumber_Click(object sender, EventArgs e) => primeNumberThread.Resume();
+
+        private void buttonRestartPrimeNumber_Click(object sender, EventArgs e) => primeNumberThread.Restart();
+
+        private void buttonRunFibinacciNumber_Click(object sender, EventArgs e) => fibinacciThread.Run();
+
+        private void buttonAbortFibinacciNumber_Click(object sender, EventArgs e) => fibinacciThread.Abort();
+
+        [Obsolete]
+        private void buttonSuppentFiibinacciNumber_Click(object sender, EventArgs e) => fibinacciThread.Suppent();
+
+        [Obsolete]
+        private void buttonResumeFiibinacciNumber_Click(object sender, EventArgs e) => fibinacciThread.Resume();
+
+        private void buttonRestartFibinacciNumber_Click(object sender, EventArgs e) => fibinacciThread.Restart();
+
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if ((threadPrimeNumber == null) || (threadPrimeNumber.ThreadState == ThreadState.Aborted)
-                || (threadPrimeNumber.ThreadState == ThreadState.Stopped))
-            {             
-                //Простые числа
-                threadPrimeNumber = new Thread(PrimeNumber);
-                threadPrimeNumber?.Start();
+            if (fibinacciThread.checkState() || (primeNumberThread.checkState()))
+            {
+                MessageBox.Show("Потоки не завершены. Завершите поток");
+                e.Cancel = true;
             }
         }
-        //Простые числа
+        /************************************Вспомогательные функции************************************/
         private void PrimeNumber()
         {
             bool infinite = false;
             ulong beginRange = 0;
             ulong endRange = 0;
-            if (textBoxBeginRange.Text.Length==0)
+            if (textBoxBeginRange.Text.Length == 0)
                 beginRange = 2;
             else
                 beginRange = ulong.Parse(textBoxBeginRange.Text);
@@ -62,7 +75,7 @@ namespace HomeWork5_6
             endRange = Math.Max(beginRange, endRange);
             while (infinite == true || beginRange <= endRange)
             {
-                if (checkPrimeNumber(beginRange))
+                if (MyFunctions.checkPrimeNumber(beginRange))
                 {
                     Thread.Sleep(1000);
                     Invoke(new Action(() =>
@@ -74,52 +87,7 @@ namespace HomeWork5_6
                 beginRange++;
             }
         }
-        //Остановка потока
-        private void buttonAbortPrimeNumber_Click(object sender, EventArgs e)
-        {
-            if (threadPrimeNumber?.IsAlive == true)
-                threadPrimeNumber?.Abort();
-        }
-        //Приостановка потока
-        [Obsolete]
-        private void buttonSuppentPrimeNumber_Click(object sender, EventArgs e)
-        {
-            if (threadPrimeNumber?.IsAlive == true)
-                threadPrimeNumber?.Suspend();
-        }
-        //Возобновление работы потока
-        [Obsolete]
-        private void buttonResumePrimeNumber_Click(object sender, EventArgs e)
-        {
-            if (threadPrimeNumber?.ThreadState == ThreadState.Suspended)
-                threadPrimeNumber?.Resume();
-        }
-        //Рестарт потока
-        private void buttonRestartPrimeNumber_Click(object sender, EventArgs e)
-        {
-            if (threadPrimeNumber?.ThreadState != ThreadState.Suspended)
-            {
-                buttonAbortPrimeNumber_Click(sender, e); //Вырубаем топок
-                buttonRunPrimeNumber_Click(sender, e); //Перезапускаем поток
-            }
-        }
 
-
-        /************************************Числа Фибоначчи************************************/
-        //Запуск потока или перезапуска потока
-        private void buttonRunFibinacciNumber_Click(object sender, EventArgs e)
-        {
-            /*if ((threadFibinacciNumber == null) || (threadFibinacciNumber.ThreadState == ThreadState.Aborted)
-                || (threadFibinacciNumber.ThreadState == ThreadState.Running))
-            {
-                //Числа фибиначчи
-                threadFibinacciNumber = new Thread(FibinacciNumber);
-                threadFibinacciNumber.Start();
-            }*/
-            fibinacci.Run();
-
-        }
-        //Числа Фибоначчи
         private void FibinacciNumber()
         {
             ulong number = 1;
@@ -127,80 +95,13 @@ namespace HomeWork5_6
             while (true)
             {
                 Thread.Sleep(1000);
-                number = Fibonachi(counter);
+                number = MyFunctions.fibonachi(counter);
                 Invoke(new Action(() =>
                 {
                     listBoxThreadFibinacciNumber.Items.Add(number);
                 }));
                 counter++;
             }
-        }
-        //Остановка потока
-        private void buttonAbortFibinacciNumber_Click(object sender, EventArgs e)
-        {
-            /*if (threadFibinacciNumber?.IsAlive == true)
-                threadFibinacciNumber?.Abort();           */
-            fibinacci.Abort();
-        }
-        //Приостановка потока
-        [Obsolete]
-        private void buttonSuppentFiibinacciNumber_Click(object sender, EventArgs e)
-        {
-            /*if (threadFibinacciNumber?.IsAlive == true)
-                threadFibinacciNumber?.Suspend();*/
-            fibinacci.Suppent();
-        }
-        //Возобновление работы потока
-        [Obsolete]
-        private void buttonResumeFiibinacciNumber_Click(object sender, EventArgs e)
-        {
-            /*if (threadFibinacciNumber?.ThreadState == ThreadState.Suspended)
-                threadFibinacciNumber?.Resume();*/
-            fibinacci.Resume();
-        }
-        //Рестарт потока
-        private void buttonRestartFibinacciNumber_Click(object sender, EventArgs e)
-        {
-            /*if (threadFibinacciNumber?.ThreadState != ThreadState.Suspended)
-            {
-                buttonAbortFibinacciNumber_Click(sender, e); //Вырубаем поток
-                buttonRunFibinacciNumber_Click(sender, e); //Закускаем потока
-            }*/
-            fibinacci.Restart();
-        }
-
-
-
-        /************************************Вспомогательные функции************************************/
-        //Функция числа Фибоначчи
-        private ulong Fibonachi(ulong n)
-        {
-            if (n == 0 || n == 1) return n;
-
-            return Fibonachi(n - 1) + Fibonachi(n - 2);
-        }
-        //Функция проверки является ли число простым
-        private bool checkPrimeNumber(ulong number)
-        {
-            if (number < 2)
-                throw new ArgumentException("Число должно быть больше либо равно 2");
-            for (ulong i = 2; i < number; i++)
-            {
-                if (number % i == 0)
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
-        {
-  /*          if ((threadPrimeNumber != null || threadFibinacciNumber != null) && (threadPrimeNumber?.IsAlive==true || threadFibinacciNumber?.IsAlive==true))
-            {
-                MessageBox.Show("Потоки не завершены. Завершите поток");
-                e.Cancel = true;
-            }*/
         }
     }
 }

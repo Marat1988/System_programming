@@ -12,52 +12,62 @@ namespace HomeWork5_6
         private Thread thread;
         private Action del;
 
+        public Thread Thread { get => thread; set => thread = value; }
+
         public MyThread(Action del)
         {
-            del += del;
+            this.del += del;
+        }
+
+
+        public Thread ThreadInfo
+        {
+            get => thread;
         }
 
         //Запуск
         public void Run()
         {
-            if ((thread == null) || (thread.ThreadState == ThreadState.Aborted)
-                || (thread.ThreadState == ThreadState.Stopped))
+            if ((Thread == null) || (Thread.ThreadState == ThreadState.Aborted)
+                || (Thread.ThreadState == ThreadState.Stopped))
             {
                 ThreadStart threadStart = new ThreadStart(del);
                 //Простые числа
-                thread = new Thread(threadStart);
-                thread?.Start();
+                Thread = new Thread(threadStart);
+                Thread?.Start();
             }
         }
 
         //Остановка потока
-        private void Abort()
+        public void Abort()
         {
-            if (thread?.IsAlive == true)
-                thread?.Abort();
+            if (Thread?.IsAlive == true)
+                Thread?.Abort();
         }
         //Приостановка потока
         [Obsolete]
-        private void Suppent()
+        public void Suppent()
         {
-            if (thread?.IsAlive == true)
-                thread?.Suspend();
+            if (Thread?.IsAlive == true)
+                Thread?.Suspend();
         }
         //Возобновление работы потока
         [Obsolete]
-        private void Resume()
+        public void Resume()
         {
-            if (thread?.ThreadState == ThreadState.Suspended)
-                thread?.Resume();
+            if (Thread?.ThreadState == ThreadState.Suspended)
+                Thread?.Resume();
         }
         //Рестарт потока
-        private void Restart()
+        public void Restart()
         {
-            if (thread?.ThreadState != ThreadState.Suspended)
+            if (Thread?.ThreadState != ThreadState.Suspended)
             {
                 Abort();
                 Run();
             }
         }
+
+
     }
 }

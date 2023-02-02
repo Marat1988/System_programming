@@ -15,10 +15,15 @@ namespace HomeWork5_6
     {
         Thread threadPrimeNumber;
         Thread threadFibinacciNumber;
+        MyThread fibinacci;
+
         public FormMain()
         {
             InitializeComponent();
+            fibinacci = new MyThread(FibinacciNumber);
         }
+
+
         private void textBoxBeginRange_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)  //цифры и клавиша BackSpace
@@ -98,17 +103,21 @@ namespace HomeWork5_6
                 buttonRunPrimeNumber_Click(sender, e); //Перезапускаем поток
             }
         }
+
+
         /************************************Числа Фибоначчи************************************/
         //Запуск потока или перезапуска потока
         private void buttonRunFibinacciNumber_Click(object sender, EventArgs e)
         {
-            if ((threadFibinacciNumber == null) || (threadFibinacciNumber.ThreadState == ThreadState.Aborted)
+            /*if ((threadFibinacciNumber == null) || (threadFibinacciNumber.ThreadState == ThreadState.Aborted)
                 || (threadFibinacciNumber.ThreadState == ThreadState.Running))
             {
                 //Числа фибиначчи
                 threadFibinacciNumber = new Thread(FibinacciNumber);
                 threadFibinacciNumber.Start();
-            }
+            }*/
+            fibinacci.Run();
+
         }
         //Числа Фибоначчи
         private void FibinacciNumber()
@@ -129,32 +138,39 @@ namespace HomeWork5_6
         //Остановка потока
         private void buttonAbortFibinacciNumber_Click(object sender, EventArgs e)
         {
-            if (threadFibinacciNumber?.IsAlive == true)
-                threadFibinacciNumber?.Abort();           
+            /*if (threadFibinacciNumber?.IsAlive == true)
+                threadFibinacciNumber?.Abort();           */
+            fibinacci.Abort();
         }
         //Приостановка потока
         [Obsolete]
         private void buttonSuppentFiibinacciNumber_Click(object sender, EventArgs e)
         {
-            if (threadFibinacciNumber?.IsAlive == true)
-                threadFibinacciNumber?.Suspend();
+            /*if (threadFibinacciNumber?.IsAlive == true)
+                threadFibinacciNumber?.Suspend();*/
+            fibinacci.Suppent();
         }
         //Возобновление работы потока
         [Obsolete]
         private void buttonResumeFiibinacciNumber_Click(object sender, EventArgs e)
         {
-            if (threadFibinacciNumber?.ThreadState == ThreadState.Suspended)
-                threadFibinacciNumber?.Resume();
+            /*if (threadFibinacciNumber?.ThreadState == ThreadState.Suspended)
+                threadFibinacciNumber?.Resume();*/
+            fibinacci.Resume();
         }
         //Рестарт потока
         private void buttonRestartFibinacciNumber_Click(object sender, EventArgs e)
         {
-            if (threadFibinacciNumber?.ThreadState != ThreadState.Suspended)
+            /*if (threadFibinacciNumber?.ThreadState != ThreadState.Suspended)
             {
                 buttonAbortFibinacciNumber_Click(sender, e); //Вырубаем поток
                 buttonRunFibinacciNumber_Click(sender, e); //Закускаем потока
-            }
+            }*/
+            fibinacci.Restart();
         }
+
+
+
         /************************************Вспомогательные функции************************************/
         //Функция числа Фибоначчи
         private ulong Fibonachi(ulong n)
@@ -180,11 +196,11 @@ namespace HomeWork5_6
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if ((threadPrimeNumber != null || threadFibinacciNumber != null) && (threadPrimeNumber?.IsAlive==true || threadFibinacciNumber?.IsAlive==true))
+  /*          if ((threadPrimeNumber != null || threadFibinacciNumber != null) && (threadPrimeNumber?.IsAlive==true || threadFibinacciNumber?.IsAlive==true))
             {
                 MessageBox.Show("Потоки не завершены. Завершите поток");
                 e.Cancel = true;
-            }
+            }*/
         }
     }
 }

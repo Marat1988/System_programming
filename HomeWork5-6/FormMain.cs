@@ -33,7 +33,7 @@ namespace HomeWork5_6
         {
             while (true)
             {
-                if (this.InvokeRequired)
+                if (labelPrimeThreadState.InvokeRequired)
                     labelPrimeThreadState.Invoke(new Action(() =>
                     {
                         labelPrimeThreadState.Text = primeNumberThread?.checkStateString();

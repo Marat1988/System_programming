@@ -71,8 +71,13 @@ namespace HomeWork5_6
                 endRange = ulong.Parse(textBoxEndRange.Text);
             else
                 infinite = true;
-            beginRange = Math.Min(beginRange, endRange);
-            endRange = Math.Max(beginRange, endRange);
+            if (infinite == false)
+            {
+                if (beginRange > endRange)
+                {
+                    (beginRange, endRange) = (endRange, beginRange);
+                }
+            }
             while (infinite == true || beginRange <= endRange)
             {
                 if (MyFunctions.checkPrimeNumber(beginRange))

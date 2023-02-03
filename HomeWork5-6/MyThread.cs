@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace HomeWork5_6
 {
@@ -28,7 +24,6 @@ namespace HomeWork5_6
                 || (thread.ThreadState == ThreadState.Stopped))
             {
                 ThreadStart threadStart = new ThreadStart(del);
-                //Простые числа
                 thread = new Thread(threadStart);
                 thread?.Start();
             }

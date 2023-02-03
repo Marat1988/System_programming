@@ -34,7 +34,7 @@
 <b>Полезные ссылки.</b><br>
 
 Ссылки, которые помогли мне решить следующую проблему: "Недопустимая операция в нескольких потоках: попытка доступа к элементу управления 'labelPrimeThreadState' не из того потока, в котором он был создан"</br>
-https://www.cyberforum.ru/windows-forms/thread2015199.html?ysclid=ldok2q3quh898729472
+https://www.cyberforum.ru/windows-forms/thread2015199.html?ysclid=ldok2q3quh898729472 <br>
 https://www.cyberforum.ru/windows-forms/thread110436.html (вопрос номер 3)
 
 

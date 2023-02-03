@@ -47,6 +47,8 @@ namespace HomeWork5_6
             this.textBoxBeginRange = new System.Windows.Forms.TextBox();
             this.buttonRestartPrimeNumber = new System.Windows.Forms.Button();
             this.buttonRestartFibinacciNumber = new System.Windows.Forms.Button();
+            this.labelPrimeThreadState = new System.Windows.Forms.Label();
+            this.labelFibinacciThreadState = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBoxThreadPrimeNumber
@@ -54,7 +56,7 @@ namespace HomeWork5_6
             this.listBoxThreadPrimeNumber.FormattingEnabled = true;
             this.listBoxThreadPrimeNumber.ItemHeight = 16;
             this.listBoxThreadPrimeNumber.Location = new System.Drawing.Point(20, 54);
-            this.listBoxThreadPrimeNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxThreadPrimeNumber.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxThreadPrimeNumber.Name = "listBoxThreadPrimeNumber";
             this.listBoxThreadPrimeNumber.ScrollAlwaysVisible = true;
             this.listBoxThreadPrimeNumber.Size = new System.Drawing.Size(220, 436);
@@ -74,7 +76,7 @@ namespace HomeWork5_6
             // textBoxEndRange
             // 
             this.textBoxEndRange.Location = new System.Drawing.Point(385, 92);
-            this.textBoxEndRange.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxEndRange.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEndRange.Name = "textBoxEndRange";
             this.textBoxEndRange.Size = new System.Drawing.Size(132, 22);
             this.textBoxEndRange.TabIndex = 3;
@@ -105,7 +107,7 @@ namespace HomeWork5_6
             // buttonRunFibinacciNumber
             // 
             this.buttonRunFibinacciNumber.Location = new System.Drawing.Point(593, 498);
-            this.buttonRunFibinacciNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRunFibinacciNumber.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRunFibinacciNumber.Name = "buttonRunFibinacciNumber";
             this.buttonRunFibinacciNumber.Size = new System.Drawing.Size(221, 30);
             this.buttonRunFibinacciNumber.TabIndex = 6;
@@ -118,7 +120,7 @@ namespace HomeWork5_6
             this.listBoxThreadFibinacciNumber.FormattingEnabled = true;
             this.listBoxThreadFibinacciNumber.ItemHeight = 16;
             this.listBoxThreadFibinacciNumber.Location = new System.Drawing.Point(593, 54);
-            this.listBoxThreadFibinacciNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxThreadFibinacciNumber.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxThreadFibinacciNumber.Name = "listBoxThreadFibinacciNumber";
             this.listBoxThreadFibinacciNumber.ScrollAlwaysVisible = true;
             this.listBoxThreadFibinacciNumber.Size = new System.Drawing.Size(224, 436);
@@ -138,7 +140,7 @@ namespace HomeWork5_6
             // buttonAbortPrimeNumber
             // 
             this.buttonAbortPrimeNumber.Location = new System.Drawing.Point(20, 535);
-            this.buttonAbortPrimeNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAbortPrimeNumber.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAbortPrimeNumber.Name = "buttonAbortPrimeNumber";
             this.buttonAbortPrimeNumber.Size = new System.Drawing.Size(221, 30);
             this.buttonAbortPrimeNumber.TabIndex = 9;
@@ -149,7 +151,7 @@ namespace HomeWork5_6
             // buttonAbortFibinacciNumber
             // 
             this.buttonAbortFibinacciNumber.Location = new System.Drawing.Point(593, 535);
-            this.buttonAbortFibinacciNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAbortFibinacciNumber.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAbortFibinacciNumber.Name = "buttonAbortFibinacciNumber";
             this.buttonAbortFibinacciNumber.Size = new System.Drawing.Size(221, 30);
             this.buttonAbortFibinacciNumber.TabIndex = 10;
@@ -160,7 +162,7 @@ namespace HomeWork5_6
             // buttonSuppentPrimeNumber
             // 
             this.buttonSuppentPrimeNumber.Location = new System.Drawing.Point(20, 572);
-            this.buttonSuppentPrimeNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSuppentPrimeNumber.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSuppentPrimeNumber.Name = "buttonSuppentPrimeNumber";
             this.buttonSuppentPrimeNumber.Size = new System.Drawing.Size(221, 31);
             this.buttonSuppentPrimeNumber.TabIndex = 11;
@@ -171,7 +173,7 @@ namespace HomeWork5_6
             // buttonSuppentFiibinacciNumber
             // 
             this.buttonSuppentFiibinacciNumber.Location = new System.Drawing.Point(593, 572);
-            this.buttonSuppentFiibinacciNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSuppentFiibinacciNumber.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSuppentFiibinacciNumber.Name = "buttonSuppentFiibinacciNumber";
             this.buttonSuppentFiibinacciNumber.Size = new System.Drawing.Size(221, 31);
             this.buttonSuppentFiibinacciNumber.TabIndex = 12;
@@ -182,7 +184,7 @@ namespace HomeWork5_6
             // buttonResumePrimeNumber
             // 
             this.buttonResumePrimeNumber.Location = new System.Drawing.Point(20, 610);
-            this.buttonResumePrimeNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonResumePrimeNumber.Margin = new System.Windows.Forms.Padding(4);
             this.buttonResumePrimeNumber.Name = "buttonResumePrimeNumber";
             this.buttonResumePrimeNumber.Size = new System.Drawing.Size(221, 31);
             this.buttonResumePrimeNumber.TabIndex = 13;
@@ -193,7 +195,7 @@ namespace HomeWork5_6
             // buttonResumeFiibinacciNumber
             // 
             this.buttonResumeFiibinacciNumber.Location = new System.Drawing.Point(593, 610);
-            this.buttonResumeFiibinacciNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonResumeFiibinacciNumber.Margin = new System.Windows.Forms.Padding(4);
             this.buttonResumeFiibinacciNumber.Name = "buttonResumeFiibinacciNumber";
             this.buttonResumeFiibinacciNumber.Size = new System.Drawing.Size(221, 31);
             this.buttonResumeFiibinacciNumber.TabIndex = 14;
@@ -204,7 +206,7 @@ namespace HomeWork5_6
             // buttonRunPrimeNumber
             // 
             this.buttonRunPrimeNumber.Location = new System.Drawing.Point(20, 498);
-            this.buttonRunPrimeNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRunPrimeNumber.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRunPrimeNumber.Name = "buttonRunPrimeNumber";
             this.buttonRunPrimeNumber.Size = new System.Drawing.Size(221, 30);
             this.buttonRunPrimeNumber.TabIndex = 16;
@@ -215,7 +217,7 @@ namespace HomeWork5_6
             // textBoxBeginRange
             // 
             this.textBoxBeginRange.Location = new System.Drawing.Point(385, 55);
-            this.textBoxBeginRange.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxBeginRange.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxBeginRange.Name = "textBoxBeginRange";
             this.textBoxBeginRange.Size = new System.Drawing.Size(132, 22);
             this.textBoxBeginRange.TabIndex = 17;
@@ -226,7 +228,7 @@ namespace HomeWork5_6
             // buttonRestartPrimeNumber
             // 
             this.buttonRestartPrimeNumber.Location = new System.Drawing.Point(20, 649);
-            this.buttonRestartPrimeNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRestartPrimeNumber.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRestartPrimeNumber.Name = "buttonRestartPrimeNumber";
             this.buttonRestartPrimeNumber.Size = new System.Drawing.Size(221, 30);
             this.buttonRestartPrimeNumber.TabIndex = 18;
@@ -237,7 +239,7 @@ namespace HomeWork5_6
             // buttonRestartFibinacciNumber
             // 
             this.buttonRestartFibinacciNumber.Location = new System.Drawing.Point(593, 649);
-            this.buttonRestartFibinacciNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRestartFibinacciNumber.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRestartFibinacciNumber.Name = "buttonRestartFibinacciNumber";
             this.buttonRestartFibinacciNumber.Size = new System.Drawing.Size(221, 30);
             this.buttonRestartFibinacciNumber.TabIndex = 19;
@@ -245,11 +247,33 @@ namespace HomeWork5_6
             this.buttonRestartFibinacciNumber.UseVisualStyleBackColor = true;
             this.buttonRestartFibinacciNumber.Click += new System.EventHandler(this.buttonRestartFibinacciNumber_Click);
             // 
+            // labelPrimeThreadState
+            // 
+            this.labelPrimeThreadState.AutoSize = true;
+            this.labelPrimeThreadState.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPrimeThreadState.Location = new System.Drawing.Point(17, 692);
+            this.labelPrimeThreadState.Name = "labelPrimeThreadState";
+            this.labelPrimeThreadState.Size = new System.Drawing.Size(152, 24);
+            this.labelPrimeThreadState.TabIndex = 20;
+            this.labelPrimeThreadState.Text = "Статус потока";
+            // 
+            // labelFibinacciThreadState
+            // 
+            this.labelFibinacciThreadState.AutoSize = true;
+            this.labelFibinacciThreadState.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelFibinacciThreadState.Location = new System.Drawing.Point(589, 692);
+            this.labelFibinacciThreadState.Name = "labelFibinacciThreadState";
+            this.labelFibinacciThreadState.Size = new System.Drawing.Size(152, 24);
+            this.labelFibinacciThreadState.TabIndex = 21;
+            this.labelFibinacciThreadState.Text = "Статус потока";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(927, 715);
+            this.ClientSize = new System.Drawing.Size(927, 755);
+            this.Controls.Add(this.labelFibinacciThreadState);
+            this.Controls.Add(this.labelPrimeThreadState);
             this.Controls.Add(this.buttonRestartFibinacciNumber);
             this.Controls.Add(this.buttonRestartPrimeNumber);
             this.Controls.Add(this.textBoxBeginRange);
@@ -268,7 +292,7 @@ namespace HomeWork5_6
             this.Controls.Add(this.textBoxEndRange);
             this.Controls.Add(this.labelThread1);
             this.Controls.Add(this.listBoxThreadPrimeNumber);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMain";
             this.Text = "Тестовое приложение. Многопоточность.";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
@@ -297,6 +321,8 @@ namespace HomeWork5_6
         private System.Windows.Forms.TextBox textBoxBeginRange;
         private System.Windows.Forms.Button buttonRestartPrimeNumber;
         private System.Windows.Forms.Button buttonRestartFibinacciNumber;
+        private System.Windows.Forms.Label labelPrimeThreadState;
+        private System.Windows.Forms.Label labelFibinacciThreadState;
     }
 }
 

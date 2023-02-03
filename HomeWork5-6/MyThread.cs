@@ -53,6 +53,9 @@ namespace HomeWork5_6
             }
         }
 
-        public bool checkState() => (thread != null) && (thread?.IsAlive == true);       
+        public bool checkState() => (thread != null) && (thread?.IsAlive == true);
+
+        public string checkStateString() => thread?.ThreadState.ToString();
+  
     }
 }

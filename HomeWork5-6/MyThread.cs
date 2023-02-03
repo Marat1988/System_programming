@@ -12,11 +12,6 @@ namespace HomeWork5_6
         {
             this.del += del;
         }
-
-        public Thread ThreadInfo
-        {
-            get => thread;
-        }
         //Запуск
         public void Run()
         {

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace HomeWork5_6
 {
@@ -16,11 +12,6 @@ namespace HomeWork5_6
         {
             this.del += del;
         }
-
-        public Thread ThreadInfo
-        {
-            get => thread;
-        }
         //Запуск
         public void Run()
         {
@@ -28,7 +19,6 @@ namespace HomeWork5_6
                 || (thread.ThreadState == ThreadState.Stopped))
             {
                 ThreadStart threadStart = new ThreadStart(del);
-                //Простые числа
                 thread = new Thread(threadStart);
                 thread?.Start();
             }
@@ -63,6 +53,9 @@ namespace HomeWork5_6
             }
         }
 
-        public bool checkState() => (thread != null) && (thread?.IsAlive == true);       
+        public bool checkState() => (thread != null) && (thread?.IsAlive == true);
+
+        public string checkStateString() => thread?.ThreadState.ToString();
+  
     }
 }

@@ -98,6 +98,7 @@ namespace Task1
             this.Controls.Add(this.btnStart);
             this.Name = "FormMain";
             this.Text = "Главная форма";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCountProgressBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

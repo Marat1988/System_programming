@@ -15,6 +15,7 @@ namespace Task1
         const int defaultLocationX = 12;
         const int defaultLocationY = 60;
         const int indent = 10;
+        Thread thread;
 
         public FormMain()
         {
@@ -45,7 +46,7 @@ namespace Task1
                 }
             }
             btnStart.Enabled = false;
-            Thread thread = new Thread(delegate ()
+            thread = new Thread(delegate ()
             {
                 workers[0].Cancelled = false;
                 workers[0].Work();
@@ -69,6 +70,15 @@ namespace Task1
         {
             Action action = () => workers.ForEach((Worker worker) => worker.ProgressBar.Value = progress);    
             this.InvokeEx(action);
+        }
+
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (workers.Count > 0 && workers?[0].Cancelled == false && thread.IsAlive)
+            {
+                workers[0].Cancelled = true;
+                workers[0].Work();
+            }
         }
     }
 }

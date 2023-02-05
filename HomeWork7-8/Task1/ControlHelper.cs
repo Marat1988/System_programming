@@ -8,7 +8,7 @@ namespace Task1
         public static void InvokeEx(this Control control, Action action)
         {
             if (control.InvokeRequired)
-                control.Invoke(action);
+                control?.Invoke(action);
             else
                 action();
         }

@@ -33,8 +33,9 @@ namespace Task3
             this.numericUpDownEndRange = new System.Windows.Forms.NumericUpDown();
             this.labelBeginRange = new System.Windows.Forms.Label();
             this.labelEndRange = new System.Windows.Forms.Label();
-            this.listBoxNumberFibinacci = new System.Windows.Forms.ListBox();
+            this.listBoxNumberFibinachi = new System.Windows.Forms.ListBox();
             this.buttonStart = new System.Windows.Forms.Button();
+            this.labelNumberFibinachi = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBeginRange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEndRange)).BeginInit();
             this.SuspendLayout();
@@ -42,6 +43,11 @@ namespace Task3
             // numericUpDownBeginRange
             // 
             this.numericUpDownBeginRange.Location = new System.Drawing.Point(156, 23);
+            this.numericUpDownBeginRange.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numericUpDownBeginRange.Name = "numericUpDownBeginRange";
             this.numericUpDownBeginRange.Size = new System.Drawing.Size(120, 22);
             this.numericUpDownBeginRange.TabIndex = 0;
@@ -49,9 +55,19 @@ namespace Task3
             // numericUpDownEndRange
             // 
             this.numericUpDownEndRange.Location = new System.Drawing.Point(156, 66);
+            this.numericUpDownEndRange.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numericUpDownEndRange.Name = "numericUpDownEndRange";
             this.numericUpDownEndRange.Size = new System.Drawing.Size(120, 22);
             this.numericUpDownEndRange.TabIndex = 1;
+            this.numericUpDownEndRange.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
             // 
             // labelBeginRange
             // 
@@ -71,15 +87,15 @@ namespace Task3
             this.labelEndRange.TabIndex = 3;
             this.labelEndRange.Text = "Конец диапазона:";
             // 
-            // listBoxNumberFibinacci
+            // listBoxNumberFibinachi
             // 
-            this.listBoxNumberFibinacci.FormattingEnabled = true;
-            this.listBoxNumberFibinacci.ItemHeight = 16;
-            this.listBoxNumberFibinacci.Location = new System.Drawing.Point(296, 23);
-            this.listBoxNumberFibinacci.Name = "listBoxNumberFibinacci";
-            this.listBoxNumberFibinacci.ScrollAlwaysVisible = true;
-            this.listBoxNumberFibinacci.Size = new System.Drawing.Size(190, 244);
-            this.listBoxNumberFibinacci.TabIndex = 4;
+            this.listBoxNumberFibinachi.FormattingEnabled = true;
+            this.listBoxNumberFibinachi.ItemHeight = 16;
+            this.listBoxNumberFibinachi.Location = new System.Drawing.Point(296, 39);
+            this.listBoxNumberFibinachi.Name = "listBoxNumberFibinachi";
+            this.listBoxNumberFibinachi.ScrollAlwaysVisible = true;
+            this.listBoxNumberFibinachi.Size = new System.Drawing.Size(190, 228);
+            this.listBoxNumberFibinachi.TabIndex = 4;
             // 
             // buttonStart
             // 
@@ -90,13 +106,23 @@ namespace Task3
             this.buttonStart.Text = "СТАРТ";
             this.buttonStart.UseVisualStyleBackColor = true;
             // 
+            // labelNumberFibinachi
+            // 
+            this.labelNumberFibinachi.AutoSize = true;
+            this.labelNumberFibinachi.Location = new System.Drawing.Point(293, 19);
+            this.labelNumberFibinachi.Name = "labelNumberFibinachi";
+            this.labelNumberFibinachi.Size = new System.Drawing.Size(134, 17);
+            this.labelNumberFibinachi.TabIndex = 6;
+            this.labelNumberFibinachi.Text = "Числа Фибиначчи:";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(511, 289);
+            this.Controls.Add(this.labelNumberFibinachi);
             this.Controls.Add(this.buttonStart);
-            this.Controls.Add(this.listBoxNumberFibinacci);
+            this.Controls.Add(this.listBoxNumberFibinachi);
             this.Controls.Add(this.labelEndRange);
             this.Controls.Add(this.labelBeginRange);
             this.Controls.Add(this.numericUpDownEndRange);
@@ -117,8 +143,9 @@ namespace Task3
         private System.Windows.Forms.NumericUpDown numericUpDownEndRange;
         private System.Windows.Forms.Label labelBeginRange;
         private System.Windows.Forms.Label labelEndRange;
-        private System.Windows.Forms.ListBox listBoxNumberFibinacci;
+        private System.Windows.Forms.ListBox listBoxNumberFibinachi;
         private System.Windows.Forms.Button buttonStart;
+        private System.Windows.Forms.Label labelNumberFibinachi;
     }
 }
 

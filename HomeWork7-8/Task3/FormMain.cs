@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace Task3
 {
+    /*https://www.youtube.com/watch?v=oGxZuq2Ye2Q*/
     public partial class FormMain : Form
     {
         public FormMain()
@@ -19,11 +20,8 @@ namespace Task3
             buttonStart.Click += ButtonStart_Click;
         }
 
-        private void ButtonStart_Click(object sender, EventArgs e)
-        {
-            Start();
-        }
-
+        private void ButtonStart_Click(object sender, EventArgs e) => Start();
+     
         private async void Start()
         {
             ulong beginRange = (ulong)Math.Min(numericUpDownBeginRange.Value, numericUpDownEndRange.Value);
@@ -36,7 +34,7 @@ namespace Task3
                     Thread.Sleep(1000);
                     number = Fibonachi(i);
                 });
-                listBoxNumberFibinacci.Items.Add(number);
+                listBoxNumberFibinachi.Items.Add(number);
             }
         }
 

@@ -19,6 +19,7 @@ namespace Task2
 
         private void ButtonStart_Click(object sender, EventArgs e)
         {
+            workers.Clear();
             int numberHourse = 1;
             for (int i = 0; i < this.Controls.Count; i++)
             {
@@ -68,8 +69,10 @@ namespace Task2
                                    Итоговое_место = worker.Place,
                                }).ToList();
                     MessageBox.Show("Все финишировали", "Лошадинные гонки", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dataGridViewStatistic.DataSource = null;
                     dataGridViewStatistic.DataSource = sql;
                     buttonStart.Enabled = true;
+                    place = 1;
                 };
                 this.InvokeEx(action);
             }

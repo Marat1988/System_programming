@@ -34,7 +34,7 @@
 <b>Полезные ссылки.</b><br>
 <ol>
 <li>Для выполнения 1-го и 2-го задания помогло это видео https://www.youtube.com/watch?v=D9qcKV4j75U&list=PLWCoo5SF-qAMDIAqikhB2hvIytrMiR5TC&index=19</li>
-<li>Для выполнения послудующий заданий помолги эти ссылки:
+<li>Для выполнения последующих заданий помолги эти ссылки:
 <ol>
   <li>https://www.youtube.com/watch?v=oGxZuq2Ye2Q</li>
   <li>https://metanit.com/sharp/tutorial/13.3.php?ysclid=ldst186g8h491599157</li>

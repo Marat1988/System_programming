@@ -28,13 +28,15 @@ namespace Task3
         {
             ulong beginRange = (ulong)Math.Min(numericUpDownBeginRange.Value, numericUpDownEndRange.Value);
             ulong endRange = (ulong)Math.Max(numericUpDownBeginRange.Value, numericUpDownEndRange.Value);
+            ulong number = 0;
             for (ulong i = beginRange; i <= endRange; i++)
             {
                 await Task.Run(() =>
                 {
                     Thread.Sleep(1000);
-                    Invoke(new Action(() => listBoxNumberFibinacci.Items.Add(Fibonachi(i))));
+                    number = Fibonachi(i);
                 });
+                listBoxNumberFibinacci.Items.Add(number);
             }
         }
 

@@ -34,6 +34,7 @@
 <b>Полезные ссылки.</b><br>
 <ol>
 <li>Для выполнения 1-го и 2-го задания помогло это видео https://www.youtube.com/watch?v=D9qcKV4j75U&list=PLWCoo5SF-qAMDIAqikhB2hvIytrMiR5TC&index=19</li>
+<li>Как сменить цвет у ProgressBar (нужно наследовать класс) https://stackoverflow.com/questions/778678/how-to-change-the-color-of-progressbar-in-c-sharp-net-3-5</li>
 <li>Для выполнения последующих заданий помолги эти ссылки:
 <ol>
   <li>https://www.youtube.com/watch?v=oGxZuq2Ye2Q</li>

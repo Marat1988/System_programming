@@ -129,7 +129,7 @@ namespace Task3
             this.Controls.Add(this.numericUpDownBeginRange);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Числа Фибиначчи";
+            this.Text = "Асинхронность. Числа Фибиначчи";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBeginRange)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEndRange)).EndInit();
             this.ResumeLayout(false);

@@ -46,10 +46,10 @@ namespace Task5
             List<InfoWord> textFiles = new List<InfoWord>();
             await Task.Run(() =>
             {
+                Thread.Sleep(3000);
                 DirectoryInfo directoryInfo = new DirectoryInfo(textBoxFolderPath.Text);
                 foreach (var s in directoryInfo.GetFiles("*.txt", SearchOption.AllDirectories))
                 {
-                    Thread.Sleep(3000);
                     textFiles.Add(new InfoWord()
                     {
                         filePath = s.DirectoryName,

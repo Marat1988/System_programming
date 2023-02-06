@@ -113,6 +113,7 @@ namespace Task4
             this.Controls.Add(this.textBoxFilePath);
             this.Controls.Add(this.labelFilePath);
             this.Name = "FormMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Асинхронность. Поиск слова в файле";
             this.ResumeLayout(false);
             this.PerformLayout();

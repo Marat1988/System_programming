@@ -41,7 +41,6 @@ namespace Task4
                 textBoxFilePath.Text = openFileDialog.FileName;
             }
         }
-
         private async void Search()
         {
             int countWord = 0;

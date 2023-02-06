@@ -47,15 +47,11 @@ namespace Task4
             await Task.Run(() =>
             {
                 Thread.Sleep(3000);
-                using (FileStream fstream = new FileStream(textBoxFilePath.Text, FileMode.Open, FileAccess.Read))
-                {
-                    byte[] buffer = new byte[fstream.Length];
-                    fstream.Read(buffer, 0, buffer.Length);
-                    string textFile = Encoding.Default.GetString(buffer);
-                    Regex regex = new Regex(textBoxWord.Text, RegexOptions.IgnoreCase);
-                    MatchCollection rtg = regex.Matches(textFile);
-                    countWord = rtg.Count;
-                }
+                string textFile = File.ReadAllText(textBoxFilePath.Text);
+                Regex regex = new Regex(textBoxWord.Text, RegexOptions.IgnoreCase);
+                MatchCollection rtg = regex.Matches(textFile);
+                countWord = rtg.Count;
+                
             });
             labelStatisticInfo.Text = $"Заданное слово: {textBoxWord.Text}\nИсходный файл: {textBoxFilePath.Text}\nКоличество слов в файле: {countWord}";
         }

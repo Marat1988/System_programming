@@ -10,14 +10,24 @@ namespace Task4_5
 {
     public class Worker
     {
+        public struct Report
+        {
+            public int countNumber;
+            public long sizeFile;
+            public string fileСontent;
+        }
+
         private string[] fileNames = { "Thread1.txt", "Thread2.txt", "Thread3.txt" };
         private Mutex mutex;
+        public List<Report> reports { get; set; }
+
         public Worker()
         {
             mutex = new Mutex();
+            reports = new List<Report>();
         }
 
-        public void Thread1(object number)
+        public void Start(object number)
         {
             mutex.WaitOne();
             WorkBegin(Thread.CurrentThread.Name + " начал свою работу");
@@ -28,13 +38,39 @@ namespace Task4_5
                         break;
                 case 2: ReadWritePrimeNumberToFile(fileNames[0], fileNames[1], false);
                         break;
-                case 3:
-                    ReadWritePrimeNumberToFile(fileNames[1], fileNames[2], true);
-                    break;
+                case 3: ReadWritePrimeNumberToFile(fileNames[1], fileNames[2], true);
+                        break;
+                default: ShowStatistic();
+                        break;
             }
             WorkEnd(Thread.CurrentThread.Name + " завершил свою работу");
             mutex.ReleaseMutex();
         }
+
+        public List<Report> ShowStatistic()
+        {
+            reports = new List<Report>();
+            if (File.Exists(fileNames[0]) && File.Exists(fileNames[1]) && File.Exists(fileNames[2]))
+            {
+                for (int i = 0; i < fileNames.Length; i++)
+                {
+                    FileInfo fileInfo = new FileInfo(fileNames[i]);
+                    reports.Add(new Report
+                    {
+                        countNumber = File.ReadAllLines(fileNames[i]).Length,
+                        sizeFile = fileInfo.Length,
+                        fileСontent = File.ReadAllText(fileNames[i])
+                    });
+                }
+                var sql = (from info in reports
+                          select info).ToList();
+                return sql;
+            }
+            else
+                throw new FileNotFoundException("Нет необходимые файлов для генерации отчета");
+           
+        }
+
         //выполнение первого потока
         private void WriteNumberToFile()
         {

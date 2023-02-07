@@ -23,16 +23,29 @@ namespace Task4_5
 
         private void ButtonStart_Click(object sender, EventArgs e)
         {
-            Worker worker = new Worker();
-            worker.WorkBegin += Worker_WorkBegin;
-            worker.WorkEnd += Worker_WorkEnd;
-            Thread[] threads = new Thread[nameThread.Length];
-            for (int i = 0; i < threads.Length; i++)
+            try
             {
-                threads[i] = new Thread(worker.Thread1);
-                threads[i].Name = nameThread[i];
-                threads[i].Start(i + 1);
+                buttonStart.Enabled = false;
+                Worker worker = new Worker();
+                worker.WorkBegin += Worker_WorkBegin;
+                worker.WorkEnd += Worker_WorkEnd;
+                Thread[] threads = new Thread[nameThread.Length];
+                for (int i = 0; i < threads.Length; i++)
+                {
+                    threads[i] = new Thread(worker.Start);
+                    threads[i].Name = nameThread[i];
+                    threads[i].Start(i + 1);
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                buttonStart.Enabled = true;
+            }
+
         }
         private void Worker_WorkBegin(string info)
         {

@@ -17,7 +17,8 @@ namespace Task3
         static void Main()
         {
             const int maxCountCopy = 3;
-            using (var sem = new Semaphore(maxCountCopy, maxCountCopy, "Marat"))
+            /*Первый способ*/
+            /*using (var sem = new Semaphore(maxCountCopy, maxCountCopy, "Marat"))
             {
                 if (sem.WaitOne(TimeSpan.FromSeconds(3)))
                 {
@@ -28,6 +29,17 @@ namespace Task3
                 }
                 else
                     MessageBox.Show($"Превышено максимально допустимое число копий приложения", "Гребанный семафор", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }*/
+            /*Второй способ*/
+            if (Process.GetProcessesByName(Application.ProductName).Length > maxCountCopy)
+            {
+                MessageBox.Show($"Превышено максимально допустимое число копий приложения", "Процесс", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new FormMain());
             }
         }
     }

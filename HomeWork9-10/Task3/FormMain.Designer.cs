@@ -50,7 +50,7 @@ namespace Task3
             this.Controls.Add(this.labelInfo);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Семафор. Тест.";
+            this.Text = "Тест.";
             this.ResumeLayout(false);
             this.PerformLayout();
 

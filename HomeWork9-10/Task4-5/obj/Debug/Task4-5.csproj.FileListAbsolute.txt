@@ -1,0 +1,10 @@
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork9-10\Task4-5\bin\Debug\Task4-5.exe.config
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork9-10\Task4-5\bin\Debug\Task4-5.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork9-10\Task4-5\bin\Debug\Task4-5.pdb
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork9-10\Task4-5\obj\Debug\Task4-5.csproj.AssemblyReference.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork9-10\Task4-5\obj\Debug\Task4_5.FormMain.resources
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork9-10\Task4-5\obj\Debug\Task4_5.Properties.Resources.resources
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork9-10\Task4-5\obj\Debug\Task4-5.csproj.GenerateResource.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork9-10\Task4-5\obj\Debug\Task4-5.csproj.CoreCompileInputs.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork9-10\Task4-5\obj\Debug\Task4-5.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork9-10\Task4-5\obj\Debug\Task4-5.pdb

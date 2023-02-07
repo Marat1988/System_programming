@@ -19,12 +19,11 @@ namespace Task4_5
 
         private string[] fileNames = { "Thread1.txt", "Thread2.txt", "Thread3.txt" };
         private Mutex mutex;
-        public List<Report> reports { get; set; }
+        public static List<Report> reports { get; private set; }
 
         public Worker()
         {
             mutex = new Mutex();
-            reports = new List<Report>();
         }
 
         public void Start(object number)
@@ -40,14 +39,13 @@ namespace Task4_5
                         break;
                 case 3: ReadWritePrimeNumberToFile(fileNames[1], fileNames[2], true);
                         break;
-                default: ShowStatistic();
-                        break;
             }
             WorkEnd(Thread.CurrentThread.Name + " завершил свою работу");
             mutex.ReleaseMutex();
+            reports = ShowStatistic();
         }
 
-        public List<Report> ShowStatistic()
+        private List<Report> ShowStatistic()
         {
             reports = new List<Report>();
             if (File.Exists(fileNames[0]) && File.Exists(fileNames[1]) && File.Exists(fileNames[2]))
@@ -62,9 +60,7 @@ namespace Task4_5
                         fileСontent = File.ReadAllText(fileNames[i])
                     });
                 }
-                var sql = (from info in reports
-                          select info).ToList();
-                return sql;
+                return reports;
             }
             else
                 throw new FileNotFoundException("Нет необходимые файлов для генерации отчета");

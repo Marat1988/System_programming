@@ -34,6 +34,7 @@ namespace Task4_5
             this.labelLog = new System.Windows.Forms.Label();
             this.dataGridViewReport = new System.Windows.Forms.DataGridView();
             this.labelReport = new System.Windows.Forms.Label();
+            this.buttonReportShow = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReport)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,9 +42,9 @@ namespace Task4_5
             // 
             this.buttonStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonStart.Location = new System.Drawing.Point(302, 35);
-            this.buttonStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonStart.Margin = new System.Windows.Forms.Padding(2);
             this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(106, 51);
+            this.buttonStart.Size = new System.Drawing.Size(118, 65);
             this.buttonStart.TabIndex = 0;
             this.buttonStart.Text = "Старт";
             this.buttonStart.UseVisualStyleBackColor = true;
@@ -53,7 +54,7 @@ namespace Task4_5
             this.listBoxLog.FormattingEnabled = true;
             this.listBoxLog.HorizontalScrollbar = true;
             this.listBoxLog.Location = new System.Drawing.Point(18, 35);
-            this.listBoxLog.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxLog.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxLog.Name = "listBoxLog";
             this.listBoxLog.ScrollAlwaysVisible = true;
             this.listBoxLog.Size = new System.Drawing.Size(268, 238);
@@ -74,9 +75,9 @@ namespace Task4_5
             this.dataGridViewReport.AllowUserToAddRows = false;
             this.dataGridViewReport.AllowUserToDeleteRows = false;
             this.dataGridViewReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewReport.Location = new System.Drawing.Point(18, 301);
+            this.dataGridViewReport.Location = new System.Drawing.Point(18, 310);
             this.dataGridViewReport.Name = "dataGridViewReport";
-            this.dataGridViewReport.Size = new System.Drawing.Size(268, 168);
+            this.dataGridViewReport.Size = new System.Drawing.Size(268, 192);
             this.dataGridViewReport.TabIndex = 3;
             // 
             // labelReport
@@ -88,17 +89,28 @@ namespace Task4_5
             this.labelReport.TabIndex = 4;
             this.labelReport.Text = "Отчет";
             // 
+            // buttonReportShow
+            // 
+            this.buttonReportShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.buttonReportShow.Location = new System.Drawing.Point(302, 105);
+            this.buttonReportShow.Name = "buttonReportShow";
+            this.buttonReportShow.Size = new System.Drawing.Size(118, 66);
+            this.buttonReportShow.TabIndex = 5;
+            this.buttonReportShow.Text = "Вывести статистику";
+            this.buttonReportShow.UseVisualStyleBackColor = true;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 541);
+            this.Controls.Add(this.buttonReportShow);
             this.Controls.Add(this.labelReport);
             this.Controls.Add(this.dataGridViewReport);
             this.Controls.Add(this.labelLog);
             this.Controls.Add(this.listBoxLog);
             this.Controls.Add(this.buttonStart);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Мьютекс. Текстовое приложение";
@@ -115,6 +127,7 @@ namespace Task4_5
         private System.Windows.Forms.Label labelLog;
         private System.Windows.Forms.DataGridView dataGridViewReport;
         private System.Windows.Forms.Label labelReport;
+        private System.Windows.Forms.Button buttonReportShow;
     }
 }
 

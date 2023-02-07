@@ -19,6 +19,7 @@ namespace Task4_5
         {
             InitializeComponent();
             buttonStart.Click += ButtonStart_Click;
+            buttonReportShow.Click += ButtonReportShow_Click;
         }
 
         private void ButtonStart_Click(object sender, EventArgs e)
@@ -33,6 +34,7 @@ namespace Task4_5
                 for (int i = 0; i < threads.Length; i++)
                 {
                     threads[i] = new Thread(worker.Start);
+                    threads[i].IsBackground = true;
                     threads[i].Name = nameThread[i];
                     threads[i].Start(i + 1);
                 }
@@ -41,11 +43,6 @@ namespace Task4_5
             {
                 MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
-            {
-                buttonStart.Enabled = true;
-            }
-
         }
         private void Worker_WorkBegin(string info)
         {
@@ -56,6 +53,20 @@ namespace Task4_5
         {
             Action action = () => { listBoxLog.Items.Add(info); };
             this.InvokeEx(action);
+        }
+
+        private void ButtonReportShow_Click(object sender, EventArgs e)
+        {
+            dataGridViewReport.DataSource = null;
+            buttonStart.Enabled = true;
+            var sql = (from info in Worker.reports
+                       select new
+                       {
+                           Количество_чисел = info.countNumber,
+                           Размер_файла = info.sizeFile,
+                           Контент = info.fileСontent.Substring(0, 1000)
+                       }).ToList();
+            dataGridViewReport.DataSource = sql;
         }
     }
 }

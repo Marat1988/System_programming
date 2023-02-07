@@ -8,3 +8,13 @@ C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork9-10\Task4-5\o
 C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork9-10\Task4-5\obj\Debug\Task4-5.csproj.CoreCompileInputs.cache
 C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork9-10\Task4-5\obj\Debug\Task4-5.exe
 C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork9-10\Task4-5\obj\Debug\Task4-5.pdb
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork9-10\Task4-5\bin\Debug\Task4-5.exe.config
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork9-10\Task4-5\bin\Debug\Task4-5.exe
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork9-10\Task4-5\bin\Debug\Task4-5.pdb
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork9-10\Task4-5\obj\Debug\Task4-5.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork9-10\Task4-5\obj\Debug\Task4_5.FormMain.resources
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork9-10\Task4-5\obj\Debug\Task4_5.Properties.Resources.resources
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork9-10\Task4-5\obj\Debug\Task4-5.csproj.GenerateResource.cache
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork9-10\Task4-5\obj\Debug\Task4-5.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork9-10\Task4-5\obj\Debug\Task4-5.exe
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork9-10\Task4-5\obj\Debug\Task4-5.pdb

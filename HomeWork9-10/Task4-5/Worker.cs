@@ -17,12 +17,28 @@ namespace Task4_5
             mutex = new Mutex();
         }
 
-        public void Thread1()
+        public void Thread1(object number)
         {
             mutex.WaitOne();
             WorkBegin(Thread.CurrentThread.Name + " начал свою работу");
             Thread.Sleep(3000);
-            Random random = new Random();        
+            switch ((int)number)
+            {
+                case 1: WriteNumberToFile();
+                        break;
+                case 2: ReadWritePrimeNumberToFile(fileNames[0], fileNames[1], false);
+                        break;
+                case 3:
+                    ReadWritePrimeNumberToFile(fileNames[1], fileNames[2], true);
+                    break;
+            }
+            WorkEnd(Thread.CurrentThread.Name + " завершил свою работу");
+            mutex.ReleaseMutex();
+        }
+        //выполнение первого потока
+        private void WriteNumberToFile()
+        {
+            Random random = new Random();
             using (StreamWriter writer = new StreamWriter(fileNames[0], false))
             {
                 for (int i = 0; i < 100000; i++)
@@ -31,13 +47,55 @@ namespace Task4_5
                     writer.WriteLine(number.ToString());
                 }
             }
-            WorkEnd(Thread.CurrentThread.Name + " завершил свою работу");
-            mutex.ReleaseMutex();
+        }
+        //Выполнение второго потока (additionalVerification==false) и третьего потока (additionalVerification==true)
+        private void ReadWritePrimeNumberToFile(string readerFile, string writeFile, bool additionalVerification)
+        {
+            using (StreamWriter writer = new StreamWriter(writeFile, false))
+            {
+                using (StreamReader reader = new StreamReader(readerFile))
+                {
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        if (additionalVerification == false)
+                        {
+                            if (ulong.TryParse(line, out ulong number) & checkPrimeNumber(number))
+                            {
+                                writer.WriteLine(number.ToString());
+                            }
+                        }
+                        else
+                        {
+                            //Выполнение третьего потока с условием. 
+                            //Числа, наиденные во втором потоке уже по-любому простые.
+                            //Поэтому дополнительные проверок (ulong.TryParse(line, out ulong number) & checkPrimeNumber(number)) проводить нет смысла
+                            if (line[line.Length - 1] == '7')
+                            {
+                                writer.WriteLine(line);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //Функция проверки является ли число простым
+        private bool checkPrimeNumber(ulong number)
+        {
+            if (number < 2)
+                return false;
+            for (ulong i = 2; i < number; i++)
+            {
+                if (number % i == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         public event Action<string> WorkBegin;
         public event Action<string> WorkEnd;
-
-
     }
 }

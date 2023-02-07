@@ -14,6 +14,7 @@ namespace Task4_5
 {
     public partial class FormMain : Form
     {
+        private string[] nameThread = { "Процесс заполнения файла числами", "Процесс перебора простых чисел", "Процесс перебора простых чисел по условию" };
         public FormMain()
         {
             InitializeComponent();
@@ -25,12 +26,13 @@ namespace Task4_5
             Worker worker = new Worker();
             worker.WorkBegin += Worker_WorkBegin;
             worker.WorkEnd += Worker_WorkEnd;
-            Thread thread1 = new Thread(worker.Thread1);
-            thread1.Name = "Процесс заполнения файла числами";
-            thread1.Start();
-            Thread thread2 = new Thread(worker.Thread1);
-            thread2.Name = "Процесс2 другой";
-            thread2.Start();
+            Thread[] threads = new Thread[nameThread.Length];
+            for (int i = 0; i < threads.Length; i++)
+            {
+                threads[i] = new Thread(worker.Thread1);
+                threads[i].Name = nameThread[i];
+                threads[i].Start(i + 1);
+            }
         }
         private void Worker_WorkBegin(string info)
         {

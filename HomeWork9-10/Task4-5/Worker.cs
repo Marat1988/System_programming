@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Task4_5
 {
@@ -19,11 +16,16 @@ namespace Task4_5
 
         private static string[] fileNames = { "Thread1.txt", "Thread2.txt", "Thread3.txt" };
         Random random = new Random();
-        private Mutex mutex1 = new Mutex();
-        private Mutex mutex2 = new Mutex();
-        private Mutex mutex3 = new Mutex();
+        private Mutex mutex1;
+        private Mutex mutex2;
+        private Mutex mutex3;
 
-        public Worker() { }
+        public Worker()
+        {
+            mutex1 = new Mutex();
+            mutex2 = new Mutex();
+            mutex3 = new Mutex();
+        }
 
         public void Start(object numberOperation)
         {
@@ -43,7 +45,7 @@ namespace Task4_5
                         break;
             }
         }
-        //Поток 1
+        //Поток 1. Заполнение файла числами
         private void Work1()
         {
             WorkBegin(Thread.CurrentThread.Name + " начал свою работу");
@@ -58,7 +60,7 @@ namespace Task4_5
             }    
             WorkEnd(Thread.CurrentThread.Name + " завершил свою работу");
         }
-        //Поток 2
+        //Поток 2. Перебор чисел для выявления простых чисел
         private void Work2()
         {
             mutex1.WaitOne();
@@ -80,7 +82,7 @@ namespace Task4_5
             }
             WorkEnd(Thread.CurrentThread.Name + " завершил свою работу");
         }
-        //Поток 3
+        //Поток 3. Перебор простых чисел по условию (7 на конце)
         public void Work3()
         {
             mutex2.WaitOne();

@@ -16,7 +16,7 @@ namespace Task6
         public int GameNumber { get; set; } //Выпавшее число в рулетке
         public int PlayerNumber { get; set; } //Число игрока
         public int StartMoney { get; } //Стартовый баланс игрока
-        public int NumberRoundsPlayed { get; } = 0; //число сыгранных раундов
+        public int NumberRoundsPlayed { get; set; } = 0; //число сыгранных раундов
 
         public Player(string name, int balance, Thread thread)
         {

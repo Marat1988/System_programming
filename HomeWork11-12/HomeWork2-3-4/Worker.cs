@@ -1,39 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace HomeWork2_3_4
 {
     public class Worker
     {
         private DateTime dateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 8, 0, 0);
-        private Bus bus;
+        private List<Bus> buses;
         private ManualResetEvent ManualResetEvent = new ManualResetEvent(false);
         private List<Passenger> passengers;
-  
+        private static Random rand = new Random();
 
-        public Worker(Bus bus)
+        public Worker(List<Bus> buses)
         {
-            this.bus = bus;
+            this.buses = buses;
             passengers = new List<Passenger>();
         }
 
-        public void getOnTheBus()
+        public void getOnTheBus(object bus) //Пассажир садится в автобус
         {
             ManualResetEvent.WaitOne();
-            Random random = new Random();
-            int freePlaces = random.Next(1, bus.maxNumberSeats + 1);
-            Semaphore semaphore = new Semaphore(freePlaces, freePlaces, "CheckPlaces");
-            Passenger passenger = passengers.Where(p => p.getCurrencThreadId() == Thread.CurrentThread.ManagedThreadId).Single();
-            infoPassenger(passenger.ToString() + " уехал на втобусе");
-            passengers.Remove(passenger);
+            for (int i = 0; i < (bus as Bus).FreePlaces; i++)
+            {
+                if (passengers.Count > 0)
+                {
+                    infoPassenger("Пассажир " + passengers[0].ToString() + " сел в автобус");
+                    passengers.RemoveAt(0);
+                    infoPassengerCount($"Количество пассажиров на остановке: {passengers.Count}");
+                }
+            }
         }
 
-        //автобус в пути
-        public void BusIsOnItsWay()
+        public void BusIsOnItsWay() //автобус в пути
         {
             while (dateTime.Hour < 22)
             {
@@ -42,27 +42,34 @@ namespace HomeWork2_3_4
                 getTime("Текущее время: " + dateTime.ToShortTimeString());
                 if (dateTime.Minute % 15 == 0)
                 {
-                    infoBus("Подъехал автобус.");
+                    Bus bus = buses[rand.Next(buses.Count)]; //Генерируем случайно выбранный автобус
+                    bus.FreePlaces = rand.Next(1, bus.maxNumberSeats + 1); //Определяем случайное количество свободных мест
+                    Thread thread = new Thread(getOnTheBus);
+                    thread.Start(bus);
+                    infoBus("Подъехал автобус. " + bus.ToString());
                     ManualResetEvent.Set();
                     ManualResetEvent.Reset();
                 }
             }
         }
 
-        public void PaggengerGo()
+        public void PaggengerGo() //Пассажиры приходят на остановку
         {
             int countPassanger = 0;
             while (dateTime.Hour < 22)
             {
-                if (dateTime.Minute % 4 == 0)
+                if (dateTime.Minute % 3 == 0)
                 {
-                    Thread thread = new Thread(getOnTheBus);
-                    Passenger passenger = new Passenger(name: "Пассажир " + countPassanger, thread);
-                    passengers.Add(passenger);
-                    infoPassenger(passenger.ToString() + " приперся на остановку");
+                    int randomCountpassengers = rand.Next(1, 6); //Приток пассажиров на остановку. Случайное количество.
                     Thread.Sleep(1000);
-                    passenger.thread.Start();
-                    countPassanger++;
+                    for (int i = 0; i < randomCountpassengers; i++)
+                    {
+                        Passenger passenger = new Passenger(name: $"Пассажир {countPassanger}");
+                        passengers.Add(passenger);
+                        infoPassenger(passenger.ToString() + " приперся на остановку");
+                        infoPassengerCount($"Количество пассажиров на остановке: {passengers.Count}");
+                        countPassanger++;
+                    }
                 }
             }
         }
@@ -70,5 +77,6 @@ namespace HomeWork2_3_4
         public event Action<string> infoBus;
         public event Action<string> getTime;
         public event Action<string> infoPassenger;
+        public event Action<string> infoPassengerCount;
     }
 }

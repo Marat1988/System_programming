@@ -35,6 +35,7 @@ namespace HomeWork2_3_4
             this.labelBus = new System.Windows.Forms.Label();
             this.buttonStart = new System.Windows.Forms.Button();
             this.labelTime = new System.Windows.Forms.Label();
+            this.labelCountPassenger = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBoxPassengers
@@ -97,11 +98,22 @@ namespace HomeWork2_3_4
             this.labelTime.TabIndex = 5;
             this.labelTime.Text = "Текущее время:";
             // 
+            // labelCountPassenger
+            // 
+            this.labelCountPassenger.AutoSize = true;
+            this.labelCountPassenger.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCountPassenger.Location = new System.Drawing.Point(176, 402);
+            this.labelCountPassenger.Name = "labelCountPassenger";
+            this.labelCountPassenger.Size = new System.Drawing.Size(412, 20);
+            this.labelCountPassenger.TabIndex = 6;
+            this.labelCountPassenger.Text = "Текущее количество пассажиров на остановке:";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 507);
+            this.Controls.Add(this.labelCountPassenger);
             this.Controls.Add(this.labelTime);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.labelBus);
@@ -109,6 +121,7 @@ namespace HomeWork2_3_4
             this.Controls.Add(this.labelPassengers);
             this.Controls.Add(this.listBoxPassengers);
             this.Name = "FormMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Потоки. Имитация работы автобусной конечной";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -123,6 +136,7 @@ namespace HomeWork2_3_4
         private System.Windows.Forms.Label labelBus;
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.Label labelTime;
+        private System.Windows.Forms.Label labelCountPassenger;
     }
 }
 

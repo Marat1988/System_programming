@@ -17,33 +17,40 @@ namespace Task4_5
         private static string[] fileNames = { "Thread1.txt", "Thread2.txt", "Thread3.txt" };
         Random random = new Random();
         private Mutex mutex1;
-        private Mutex mutex2;
-        private Mutex mutex3;
+        private int expectedOperationNumber = 0;
 
         public Worker()
         {
             mutex1 = new Mutex();
-            mutex2 = new Mutex();
-            mutex3 = new Mutex();
         }
 
         public void Start(object numberOperation)
         {
-            switch ((int)numberOperation)
+            try
             {
-                case 0: mutex1.WaitOne();
-                        Work1();
-                        mutex1.ReleaseMutex();
-                        break;
-                case 1: mutex2.WaitOne();
-                        Work2();
-                        mutex2.ReleaseMutex();
-                        break;
-                case 2: mutex3.WaitOne();
-                        Work3();
-                        mutex3.ReleaseMutex();
-                        break;
+                mutex1.WaitOne();
             }
+            catch {}
+            if ((int)numberOperation == expectedOperationNumber)
+            {
+                switch ((int)numberOperation)
+                {
+                    case 0: Work1();
+                            break;
+                    case 1: Work2();
+                            break;
+                    case 2: Work3();
+                            break;
+                }
+                expectedOperationNumber++;
+            }
+            else
+            {
+                mutex1.ReleaseMutex();
+                Thread.Sleep(3000);
+                Start(expectedOperationNumber);
+            }
+
         }
         //Поток 1. Заполнение файла числами
         private void Work1()
@@ -63,7 +70,6 @@ namespace Task4_5
         //Поток 2. Перебор чисел для выявления простых чисел
         private void Work2()
         {
-            mutex1.WaitOne();
             WorkBegin(Thread.CurrentThread.Name + " начал свою работу");
             Thread.Sleep(3000);
             using (StreamWriter writer = new StreamWriter(fileNames[1], false))
@@ -85,7 +91,6 @@ namespace Task4_5
         //Поток 3. Перебор простых чисел по условию (7 на конце)
         public void Work3()
         {
-            mutex2.WaitOne();
             WorkBegin(Thread.CurrentThread.Name + " начал свою работу");
             Thread.Sleep(3000);
             using (StreamWriter writer = new StreamWriter(fileNames[2], false))

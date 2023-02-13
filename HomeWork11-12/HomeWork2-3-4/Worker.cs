@@ -20,16 +20,20 @@ namespace HomeWork2_3_4
             passengers = new List<Passenger>();
         }
 
-        public void getOnTheBus(object bus) //Пассажир садится в автобус
+        private void GetOnTheBus(object bus) //Пассажир садится в автобус
         {
             ManualResetEvent.WaitOne();
             for (int i = 0; i < (bus as Bus).FreePlaces; i++)
             {
                 if (passengers.Count > 0)
                 {
-                    infoPassenger("Пассажир " + passengers[0].ToString() + " сел в автобус");
-                    passengers.RemoveAt(0);
-                    infoPassengerCount($"Количество пассажиров на остановке: {passengers.Count}");
+                    Passenger passenger = passengers.Where(p => p.expectedBusNumber == (bus as Bus).number).FirstOrDefault();
+                    if (passenger != null)
+                    {
+                        infoPassenger("Пассажир " + passenger.ToString() + " сел в автобус");
+                        passengers.Remove(passenger);
+                        infoPassengerCount($"Количество пассажиров на остановке: {passengers.Count}");
+                    }
                 }
             }
         }
@@ -45,7 +49,7 @@ namespace HomeWork2_3_4
                 {
                     Bus bus = buses[rand.Next(buses.Count)]; //Генерируем случайно выбранный автобус
                     bus.FreePlaces = rand.Next(1, bus.maxNumberSeats + 1); //Определяем случайное количество свободных мест
-                    Thread thread = new Thread(getOnTheBus);
+                    Thread thread = new Thread(GetOnTheBus);
                     thread.Start(bus);
                     infoBus("Подъехал автобус. " + bus.ToString());
                     ManualResetEvent.Set();
@@ -66,7 +70,7 @@ namespace HomeWork2_3_4
                     for (int i = 0; i < randomCountpassengers; i++)
                     {
                         string namePassenger = namePassengers[rand.Next(namePassengers.Length)] + countPassanger.ToString();
-                        Passenger passenger = new Passenger(name: namePassenger);
+                        Passenger passenger = new Passenger(name: namePassenger, expectedBusNumber: buses[rand.Next(buses.Count)].number);
                         passengers.Add(passenger);
                         infoPassenger(passenger.ToString() + " приперся на остановку");
                         infoPassengerCount($"Количество пассажиров на остановке: {passengers.Count}");

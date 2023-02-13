@@ -44,17 +44,17 @@ namespace HomeWork2_3_4
             this.listBoxPassengers.HorizontalScrollbar = true;
             this.listBoxPassengers.ItemHeight = 16;
             this.listBoxPassengers.Location = new System.Drawing.Point(20, 101);
-            this.listBoxPassengers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxPassengers.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxPassengers.Name = "listBoxPassengers";
             this.listBoxPassengers.ScrollAlwaysVisible = true;
-            this.listBoxPassengers.Size = new System.Drawing.Size(493, 372);
+            this.listBoxPassengers.Size = new System.Drawing.Size(616, 372);
             this.listBoxPassengers.TabIndex = 0;
             // 
             // labelPassengers
             // 
             this.labelPassengers.AutoSize = true;
             this.labelPassengers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelPassengers.Location = new System.Drawing.Point(16, 69);
+            this.labelPassengers.Location = new System.Drawing.Point(18, 77);
             this.labelPassengers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPassengers.Name = "labelPassengers";
             this.labelPassengers.Size = new System.Drawing.Size(119, 20);
@@ -66,18 +66,18 @@ namespace HomeWork2_3_4
             this.listBoxBus.FormattingEnabled = true;
             this.listBoxBus.HorizontalScrollbar = true;
             this.listBoxBus.ItemHeight = 16;
-            this.listBoxBus.Location = new System.Drawing.Point(539, 101);
-            this.listBoxBus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxBus.Location = new System.Drawing.Point(664, 101);
+            this.listBoxBus.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxBus.Name = "listBoxBus";
             this.listBoxBus.ScrollAlwaysVisible = true;
-            this.listBoxBus.Size = new System.Drawing.Size(688, 372);
+            this.listBoxBus.Size = new System.Drawing.Size(663, 372);
             this.listBoxBus.TabIndex = 2;
             // 
             // labelBus
             // 
             this.labelBus.AutoSize = true;
             this.labelBus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelBus.Location = new System.Drawing.Point(535, 69);
+            this.labelBus.Location = new System.Drawing.Point(660, 77);
             this.labelBus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelBus.Name = "labelBus";
             this.labelBus.Size = new System.Drawing.Size(104, 20);
@@ -87,7 +87,7 @@ namespace HomeWork2_3_4
             // buttonStart
             // 
             this.buttonStart.Location = new System.Drawing.Point(20, 495);
-            this.buttonStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonStart.Margin = new System.Windows.Forms.Padding(4);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(165, 69);
             this.buttonStart.TabIndex = 4;
@@ -121,7 +121,7 @@ namespace HomeWork2_3_4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1244, 624);
+            this.ClientSize = new System.Drawing.Size(1340, 624);
             this.Controls.Add(this.labelCountPassenger);
             this.Controls.Add(this.labelTime);
             this.Controls.Add(this.buttonStart);
@@ -129,7 +129,7 @@ namespace HomeWork2_3_4
             this.Controls.Add(this.listBoxBus);
             this.Controls.Add(this.labelPassengers);
             this.Controls.Add(this.listBoxPassengers);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Потоки. Имитация работы автобусной конечной";

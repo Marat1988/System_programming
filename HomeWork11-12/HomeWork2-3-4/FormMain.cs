@@ -16,11 +16,11 @@ namespace HomeWork2_3_4
         {
             List<Bus> buses = new List<Bus>()
             {
-                new Bus("175", 30),
-                new Bus("176", 40),
-                new Bus("177А", 40),
-                new Bus("188",30),
-                new Bus("190",30)
+                new Bus(175, 30),
+                new Bus(176, 40),
+                new Bus(177, 40),
+                new Bus(188, 30),
+                new Bus(190, 30)
             };
             Worker worker = new Worker(buses);
             worker.getTime += BusMovement_getTime;

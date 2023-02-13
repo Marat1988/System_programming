@@ -8,3 +8,13 @@ C:\Users\HP\Documents\GitHub\System_programming\HomeWork11-12\HomeWork2-3-4\obj\
 C:\Users\HP\Documents\GitHub\System_programming\HomeWork11-12\HomeWork2-3-4\obj\Debug\HomeWork2-3-4.csproj.CoreCompileInputs.cache
 C:\Users\HP\Documents\GitHub\System_programming\HomeWork11-12\HomeWork2-3-4\obj\Debug\HomeWork2-3-4.exe
 C:\Users\HP\Documents\GitHub\System_programming\HomeWork11-12\HomeWork2-3-4\obj\Debug\HomeWork2-3-4.pdb
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork11-12\HomeWork2-3-4\bin\Debug\HomeWork2-3-4.exe.config
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork11-12\HomeWork2-3-4\bin\Debug\HomeWork2-3-4.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork11-12\HomeWork2-3-4\bin\Debug\HomeWork2-3-4.pdb
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork11-12\HomeWork2-3-4\obj\Debug\HomeWork2-3-4.csproj.AssemblyReference.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork11-12\HomeWork2-3-4\obj\Debug\HomeWork2_3_4.FormMain.resources
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork11-12\HomeWork2-3-4\obj\Debug\HomeWork2_3_4.Properties.Resources.resources
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork11-12\HomeWork2-3-4\obj\Debug\HomeWork2-3-4.csproj.GenerateResource.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork11-12\HomeWork2-3-4\obj\Debug\HomeWork2-3-4.csproj.CoreCompileInputs.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork11-12\HomeWork2-3-4\obj\Debug\HomeWork2-3-4.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork11-12\HomeWork2-3-4\obj\Debug\HomeWork2-3-4.pdb

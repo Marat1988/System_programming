@@ -12,6 +12,7 @@ namespace HomeWork2_3_4
         private ManualResetEvent ManualResetEvent = new ManualResetEvent(false);
         private List<Passenger> passengers;
         private static Random rand = new Random();
+        private string[] namePassengers = { "Алкоголик", "Наркоман", "Тунеядец", "Футболист", "Проститутка", "Сутенер", "Студент академии ТОП", "Преподаватель-недоучка" };
 
         public Worker(List<Bus> buses)
         {
@@ -64,7 +65,8 @@ namespace HomeWork2_3_4
                     Thread.Sleep(1000);
                     for (int i = 0; i < randomCountpassengers; i++)
                     {
-                        Passenger passenger = new Passenger(name: $"Пассажир {countPassanger}");
+                        string namePassenger = namePassengers[rand.Next(namePassengers.Length)] + countPassanger.ToString();
+                        Passenger passenger = new Passenger(name: namePassenger);
                         passengers.Add(passenger);
                         infoPassenger(passenger.ToString() + " приперся на остановку");
                         infoPassengerCount($"Количество пассажиров на остановке: {passengers.Count}");

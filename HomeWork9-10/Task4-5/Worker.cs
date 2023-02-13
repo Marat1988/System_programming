@@ -50,7 +50,6 @@ namespace Task4_5
                 Thread.Sleep(3000);
                 Start(expectedOperationNumber);
             }
-
         }
         //Поток 1. Заполнение файла числами
         private void Work1()

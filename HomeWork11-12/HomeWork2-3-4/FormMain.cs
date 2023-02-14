@@ -14,6 +14,7 @@ namespace HomeWork2_3_4
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
+            buttonStart.Enabled = false;
             List<Bus> buses = new List<Bus>()
             {
                 new Bus(175, 30),

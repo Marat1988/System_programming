@@ -12,7 +12,7 @@ namespace HomeWork2_3_4
         private ManualResetEvent ManualResetEvent = new ManualResetEvent(false);
         private List<Passenger> passengers;
         private static Random rand = new Random();
-        private string[] namePassengers = { "Алкоголик", "Наркоман", "Тунеядец", "Футболист", "Проститутка", "Сутенер", "Депутат", "Студент академии ТОП", "Гребанный преподаватель" };
+        private string[] namePassengers = { "Алкоголик", "Наркоман", "Тунеядец", "Футболист", "Проститутка", "Сутенер", "Депутат", "Студент академии ТОП", "Гребанный преподаватель", "Самая лучшая преподавательница" };
 
         public Worker(List<Bus> buses)
         {

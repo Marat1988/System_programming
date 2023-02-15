@@ -1,16 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Task4Library
 {
     public class Work
     {
         public static event Action<string> infoMessage;
-
+        /// <summary>
+        /// Копирование файла
+        /// </summary>
+        /// <param name="sourceFileName">Исходный файл</param>
+        /// <param name="destFileName">Новый файл</param>
         public static void CopyFile(string sourceFileName, string destFileName)
         {
             if (!File.Exists(sourceFileName))
@@ -24,7 +23,12 @@ namespace Task4Library
                 infoMessage(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Копирование директорий
+        /// </summary>
+        /// <param name="sourceDir">Исходная папка</param>
+        /// <param name="destinationDir">Место назначения</param>
+        /// <param name="recursive">Истина для копирования поддиректорий</param>
         public static void CopyDirectory(string sourceDir, string destinationDir, bool recursive)
         {
             // Get information about the source directory
@@ -52,7 +56,10 @@ namespace Task4Library
                 }
             }
         }
-
+        /// <summary>
+        /// Удаление файла по имени
+        /// </summary>
+        /// <param name="path">Исходный файл</param>
         public static void FileRemove(string path)
         {
             if (!File.Exists(path))
@@ -66,7 +73,10 @@ namespace Task4Library
                 infoMessage(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Удаление файлов по набору имен;
+        /// </summary>
+        /// <param name="fileName">Массив путей файлов</param>
         public static void FilesRemove(string[] fileName)
         {
             if (fileName.Length > 0)
@@ -84,7 +94,11 @@ namespace Task4Library
                 }
             }
         }
-
+        /// <summary>
+        /// Удаление файлов по маске
+        /// </summary>
+        /// <param name="sourceDir">Исходная папка</param>
+        /// <param name="extension">Расширение. Например, *.txt</param>
         public static void DemandingExpansionFile(string sourceDir, string extension)
         {
             var dir = new DirectoryInfo(sourceDir);
@@ -100,20 +114,23 @@ namespace Task4Library
                 }
             }         
         }
-
-        public static void FileMove(string path, string newPath)
+        /// <summary>
+        /// Перенос файла.
+        /// </summary>
+        /// <param name="sourceFileName">Исходный файл</param>
+        /// <param name="destFileName">Новое расположение файла</param>
+        public static void FileMove(string sourceFileName, string destFileName)
         {
-            if (File.Exists(path))
-                throw new FileNotFoundException($"Исходный файл {path} не существует");
+            if (File.Exists(sourceFileName))
+                throw new FileNotFoundException($"Исходный файл {sourceFileName} не существует");
             try
             {
-                File.Move(path, newPath);
+                File.Move(sourceFileName, destFileName);
             }
             catch (Exception ex)
             {
                 infoMessage(ex.Message);
             }
         }
-
     }
 }

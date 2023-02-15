@@ -1,0 +1,13 @@
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork13-14\Task2\TestApplication\bin\Debug\TestApplication.exe.config
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork13-14\Task2\TestApplication\bin\Debug\TestApplication.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork13-14\Task2\TestApplication\bin\Debug\TestApplication.pdb
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork13-14\Task2\TestApplication\obj\Debug\TestApplication.csproj.AssemblyReference.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork13-14\Task2\TestApplication\obj\Debug\TestApplication.FormMain.resources
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork13-14\Task2\TestApplication\obj\Debug\TestApplication.Properties.Resources.resources
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork13-14\Task2\TestApplication\obj\Debug\TestApplication.csproj.GenerateResource.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork13-14\Task2\TestApplication\obj\Debug\TestApplication.csproj.CoreCompileInputs.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork13-14\Task2\TestApplication\obj\Debug\TestApplication.exe
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork13-14\Task2\TestApplication\obj\Debug\TestApplication.pdb
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork13-14\Task2\TestApplication\bin\Debug\Task2Library.dll
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork13-14\Task2\TestApplication\bin\Debug\Task2Library.pdb
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork13-14\Task2\TestApplication\obj\Debug\TestApplication.csproj.CopyComplete

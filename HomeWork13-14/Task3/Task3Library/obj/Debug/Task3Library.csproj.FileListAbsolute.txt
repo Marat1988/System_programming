@@ -1,0 +1,5 @@
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task3\Task3Library\bin\Debug\Task3Library.dll
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task3\Task3Library\bin\Debug\Task3Library.pdb
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task3\Task3Library\obj\Debug\Task3Library.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task3\Task3Library\obj\Debug\Task3Library.dll
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task3\Task3Library\obj\Debug\Task3Library.pdb

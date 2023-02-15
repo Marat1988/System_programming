@@ -8,3 +8,16 @@ C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork13-14\Task3\Te
 C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork13-14\Task3\TestApplication\obj\Debug\TestApplication.csproj.CoreCompileInputs.cache
 C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork13-14\Task3\TestApplication\obj\Debug\TestApplication.exe
 C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork13-14\Task3\TestApplication\obj\Debug\TestApplication.pdb
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task3\TestApplication\bin\Debug\TestApplication.exe.config
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task3\TestApplication\bin\Debug\TestApplication.exe
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task3\TestApplication\bin\Debug\TestApplication.pdb
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task3\TestApplication\obj\Debug\TestApplication.FormMain.resources
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task3\TestApplication\obj\Debug\TestApplication.Properties.Resources.resources
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task3\TestApplication\obj\Debug\TestApplication.csproj.GenerateResource.cache
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task3\TestApplication\obj\Debug\TestApplication.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task3\TestApplication\obj\Debug\TestApplication.exe
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task3\TestApplication\obj\Debug\TestApplication.pdb
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task3\TestApplication\obj\Debug\TestApplication.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task3\TestApplication\bin\Debug\Task3Library.dll
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task3\TestApplication\bin\Debug\Task3Library.pdb
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task3\TestApplication\obj\Debug\TestApplication.csproj.CopyComplete

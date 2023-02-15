@@ -1,0 +1,5 @@
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork13-14\Task1Library\bin\Debug\Task1Library.dll
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork13-14\Task1Library\bin\Debug\Task1Library.pdb
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork13-14\Task1Library\obj\Debug\Task1Library.csproj.CoreCompileInputs.cache
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork13-14\Task1Library\obj\Debug\Task1Library.dll
+C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork13-14\Task1Library\obj\Debug\Task1Library.pdb

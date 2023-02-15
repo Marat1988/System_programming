@@ -38,8 +38,15 @@ namespace ApplicationTest
             this.labelDestFileName = new System.Windows.Forms.Label();
             this.checkBoxOverWrile = new System.Windows.Forms.CheckBox();
             this.buttonStartCopy = new System.Windows.Forms.Button();
+            this.textBoxSourceDir = new System.Windows.Forms.TextBox();
+            this.textBoxDestinationDir = new System.Windows.Forms.TextBox();
+            this.labelSourceDir = new System.Windows.Forms.Label();
+            this.labelDestinationDir = new System.Windows.Forms.Label();
+            this.checkBoxRecursive = new System.Windows.Forms.CheckBox();
+            this.buttonDirectoryCopy = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -71,6 +78,12 @@ namespace ApplicationTest
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.buttonDirectoryCopy);
+            this.tabPage2.Controls.Add(this.checkBoxRecursive);
+            this.tabPage2.Controls.Add(this.labelDestinationDir);
+            this.tabPage2.Controls.Add(this.labelSourceDir);
+            this.tabPage2.Controls.Add(this.textBoxDestinationDir);
+            this.tabPage2.Controls.Add(this.textBoxSourceDir);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -130,6 +143,57 @@ namespace ApplicationTest
             this.buttonStartCopy.Text = "Выполниить копирование";
             this.buttonStartCopy.UseVisualStyleBackColor = true;
             // 
+            // textBoxSourceDir
+            // 
+            this.textBoxSourceDir.Location = new System.Drawing.Point(368, 17);
+            this.textBoxSourceDir.Name = "textBoxSourceDir";
+            this.textBoxSourceDir.Size = new System.Drawing.Size(230, 20);
+            this.textBoxSourceDir.TabIndex = 0;
+            // 
+            // textBoxDestinationDir
+            // 
+            this.textBoxDestinationDir.Location = new System.Drawing.Point(368, 53);
+            this.textBoxDestinationDir.Name = "textBoxDestinationDir";
+            this.textBoxDestinationDir.Size = new System.Drawing.Size(230, 20);
+            this.textBoxDestinationDir.TabIndex = 1;
+            // 
+            // labelSourceDir
+            // 
+            this.labelSourceDir.AutoSize = true;
+            this.labelSourceDir.Location = new System.Drawing.Point(8, 20);
+            this.labelSourceDir.Name = "labelSourceDir";
+            this.labelSourceDir.Size = new System.Drawing.Size(270, 13);
+            this.labelSourceDir.TabIndex = 3;
+            this.labelSourceDir.Text = "Введите путь к исходной папке, например: C:\\Test2";
+            // 
+            // labelDestinationDir
+            // 
+            this.labelDestinationDir.AutoSize = true;
+            this.labelDestinationDir.Location = new System.Drawing.Point(8, 56);
+            this.labelDestinationDir.Name = "labelDestinationDir";
+            this.labelDestinationDir.Size = new System.Drawing.Size(354, 13);
+            this.labelDestinationDir.TabIndex = 4;
+            this.labelDestinationDir.Text = "Введите путь, куда копировать папку, например C:\\Test4\\New folder";
+            // 
+            // checkBoxRecursive
+            // 
+            this.checkBoxRecursive.AutoSize = true;
+            this.checkBoxRecursive.Location = new System.Drawing.Point(11, 88);
+            this.checkBoxRecursive.Name = "checkBoxRecursive";
+            this.checkBoxRecursive.Size = new System.Drawing.Size(166, 17);
+            this.checkBoxRecursive.TabIndex = 5;
+            this.checkBoxRecursive.Text = "Копировать поддиректории";
+            this.checkBoxRecursive.UseVisualStyleBackColor = true;
+            // 
+            // buttonDirectoryCopy
+            // 
+            this.buttonDirectoryCopy.Location = new System.Drawing.Point(11, 121);
+            this.buttonDirectoryCopy.Name = "buttonDirectoryCopy";
+            this.buttonDirectoryCopy.Size = new System.Drawing.Size(180, 42);
+            this.buttonDirectoryCopy.TabIndex = 6;
+            this.buttonDirectoryCopy.Text = "Выполниить копирование";
+            this.buttonDirectoryCopy.UseVisualStyleBackColor = true;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,6 +205,8 @@ namespace ApplicationTest
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -156,6 +222,12 @@ namespace ApplicationTest
         private System.Windows.Forms.TextBox textBoxSourceFileName;
         private System.Windows.Forms.CheckBox checkBoxOverWrile;
         private System.Windows.Forms.Button buttonStartCopy;
+        private System.Windows.Forms.TextBox textBoxDestinationDir;
+        private System.Windows.Forms.TextBox textBoxSourceDir;
+        private System.Windows.Forms.Label labelDestinationDir;
+        private System.Windows.Forms.Label labelSourceDir;
+        private System.Windows.Forms.Button buttonDirectoryCopy;
+        private System.Windows.Forms.CheckBox checkBoxRecursive;
     }
 }
 

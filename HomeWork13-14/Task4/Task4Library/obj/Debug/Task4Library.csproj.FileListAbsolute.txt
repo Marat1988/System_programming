@@ -3,4 +3,3 @@ C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task4\Task4Library
 C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task4\Task4Library\obj\Debug\Task4Library.csproj.CoreCompileInputs.cache
 C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task4\Task4Library\obj\Debug\Task4Library.dll
 C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task4\Task4Library\obj\Debug\Task4Library.pdb
-C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task4\Task4Library\obj\Debug\Task4Library.csproj.AssemblyReference.cache

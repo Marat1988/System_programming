@@ -10,13 +10,15 @@ namespace Task4Library
         /// </summary>
         /// <param name="sourceFileName">Исходный файл</param>
         /// <param name="destFileName">Новый файл</param>
-        public static void CopyFile(string sourceFileName, string destFileName)
+        public static void CopyFile(string sourceFileName, string destFileName, bool overWrite)
         {
             if (!File.Exists(sourceFileName))
                 throw new FileNotFoundException($"Исходный файл {sourceFileName} не существует");
             try
             {
-                File.Copy(sourceFileName, destFileName, true);
+                FileInfo fileInfo = new FileInfo(sourceFileName);
+                fileInfo.CopyTo(destFileName, overWrite);
+                infoMessage("Копирование успешно выполнено");
             }
             catch (Exception ex)
             {

@@ -69,6 +69,7 @@ namespace Task4Library
             try
             {
                 File.Delete(path);
+                infoMessage("Удаление успешно выполнено.");
             }
             catch (Exception ex)
             {

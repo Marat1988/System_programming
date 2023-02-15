@@ -44,15 +44,21 @@ namespace ApplicationTest
             this.labelDestinationDir = new System.Windows.Forms.Label();
             this.checkBoxRecursive = new System.Windows.Forms.CheckBox();
             this.buttonDirectoryCopy = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.labelPathFile = new System.Windows.Forms.Label();
+            this.textBoxPathFile = new System.Windows.Forms.TextBox();
+            this.buttonDeleteFile = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -94,14 +100,14 @@ namespace ApplicationTest
             // 
             // textBoxSourceFileName
             // 
-            this.textBoxSourceFileName.Location = new System.Drawing.Point(339, 21);
+            this.textBoxSourceFileName.Location = new System.Drawing.Point(349, 21);
             this.textBoxSourceFileName.Name = "textBoxSourceFileName";
             this.textBoxSourceFileName.Size = new System.Drawing.Size(336, 20);
             this.textBoxSourceFileName.TabIndex = 0;
             // 
             // textBoxDestFileName
             // 
-            this.textBoxDestFileName.Location = new System.Drawing.Point(338, 59);
+            this.textBoxDestFileName.Location = new System.Drawing.Point(349, 59);
             this.textBoxDestFileName.Name = "textBoxDestFileName";
             this.textBoxDestFileName.Size = new System.Drawing.Size(337, 20);
             this.textBoxDestFileName.TabIndex = 1;
@@ -145,14 +151,14 @@ namespace ApplicationTest
             // 
             // textBoxSourceDir
             // 
-            this.textBoxSourceDir.Location = new System.Drawing.Point(368, 17);
+            this.textBoxSourceDir.Location = new System.Drawing.Point(377, 17);
             this.textBoxSourceDir.Name = "textBoxSourceDir";
             this.textBoxSourceDir.Size = new System.Drawing.Size(230, 20);
             this.textBoxSourceDir.TabIndex = 0;
             // 
             // textBoxDestinationDir
             // 
-            this.textBoxDestinationDir.Location = new System.Drawing.Point(368, 53);
+            this.textBoxDestinationDir.Location = new System.Drawing.Point(377, 53);
             this.textBoxDestinationDir.Name = "textBoxDestinationDir";
             this.textBoxDestinationDir.Size = new System.Drawing.Size(230, 20);
             this.textBoxDestinationDir.TabIndex = 1;
@@ -194,6 +200,43 @@ namespace ApplicationTest
             this.buttonDirectoryCopy.Text = "Выполниить копирование";
             this.buttonDirectoryCopy.UseVisualStyleBackColor = true;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.buttonDeleteFile);
+            this.tabPage3.Controls.Add(this.textBoxPathFile);
+            this.tabPage3.Controls.Add(this.labelPathFile);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(792, 424);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Удаление файла";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // labelPathFile
+            // 
+            this.labelPathFile.AutoSize = true;
+            this.labelPathFile.Location = new System.Drawing.Point(8, 17);
+            this.labelPathFile.Name = "labelPathFile";
+            this.labelPathFile.Size = new System.Drawing.Size(324, 13);
+            this.labelPathFile.TabIndex = 3;
+            this.labelPathFile.Text = "Введите путь к исходному файлу, например: C:\\Test\\MyFile.txt)";
+            // 
+            // textBoxPathFile
+            // 
+            this.textBoxPathFile.Location = new System.Drawing.Point(347, 14);
+            this.textBoxPathFile.Name = "textBoxPathFile";
+            this.textBoxPathFile.Size = new System.Drawing.Size(336, 20);
+            this.textBoxPathFile.TabIndex = 4;
+            // 
+            // buttonDeleteFile
+            // 
+            this.buttonDeleteFile.Location = new System.Drawing.Point(11, 50);
+            this.buttonDeleteFile.Name = "buttonDeleteFile";
+            this.buttonDeleteFile.Size = new System.Drawing.Size(180, 42);
+            this.buttonDeleteFile.TabIndex = 7;
+            this.buttonDeleteFile.Text = "Удалить";
+            this.buttonDeleteFile.UseVisualStyleBackColor = true;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,6 +250,8 @@ namespace ApplicationTest
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -228,6 +273,10 @@ namespace ApplicationTest
         private System.Windows.Forms.Label labelSourceDir;
         private System.Windows.Forms.Button buttonDirectoryCopy;
         private System.Windows.Forms.CheckBox checkBoxRecursive;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TextBox textBoxPathFile;
+        private System.Windows.Forms.Label labelPathFile;
+        private System.Windows.Forms.Button buttonDeleteFile;
     }
 }
 

@@ -18,19 +18,18 @@ namespace ApplicationTest
             InitializeComponent();
             buttonStartCopy.Click += ButtonStartCopy_Click;
             buttonDirectoryCopy.Click += ButtonDirectoryCopy_Click;
+            buttonDeleteFile.Click += ButtonDeleteFile_Click;
             Work.infoMessage += Work_infoMessage;
+        }
+
+        private void ButtonDeleteFile_Click(object sender, EventArgs e)
+        {
+            Work.FileRemove(textBoxPathFile.Text);
         }
 
         private void ButtonDirectoryCopy_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Work.CopyDirectory(textBoxSourceDir.Text, textBoxDestinationDir.Text, checkBoxRecursive.Checked);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            Work.CopyDirectory(textBoxSourceDir.Text, textBoxDestinationDir.Text, checkBoxRecursive.Checked);
         }
 
         private void ButtonStartCopy_Click(object sender, EventArgs e)

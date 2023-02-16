@@ -69,7 +69,7 @@ namespace Task4Library
             try
             {
                 File.Delete(path);
-                infoMessage("Удаление успешно выполнено.");
+                infoMessage($"Удаление {path} успешно выполнено.");
             }
             catch (Exception ex)
             {
@@ -80,21 +80,16 @@ namespace Task4Library
         /// Удаление файлов по набору имен;
         /// </summary>
         /// <param name="fileName">Массив путей файлов</param>
-        public static void FilesRemove(string[] fileName)
+        public static void FilesRemove(string path, string fileNameDelete)
         {
-            if (fileName.Length > 0)
+            var dir = new DirectoryInfo(path);
+            if (!dir.Exists)
+                throw new DirectoryNotFoundException($"Исходная папка не существует: {dir.FullName}");
+            string[] files = Directory.GetFiles(path);
+            foreach (string file in files)
             {
-                for (int i = 0; i < fileName.Length; i++)
-                {
-                    try
-                    {
-                        FileRemove(fileName[i]);
-                    }
-                    catch (Exception ex)
-                    {
-                        infoMessage(ex.Message);
-                    }
-                }
+                if (file.ToUpper().Contains(fileNameDelete.ToUpper()))
+                    FileRemove(file);
             }
         }
         /// <summary>

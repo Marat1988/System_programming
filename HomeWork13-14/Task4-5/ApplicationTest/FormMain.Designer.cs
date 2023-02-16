@@ -49,23 +49,29 @@ namespace ApplicationTest
             this.textBoxPathFile = new System.Windows.Forms.TextBox();
             this.labelPathFile = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.textBoxFolderPath = new System.Windows.Forms.TextBox();
-            this.labelFolderPath = new System.Windows.Forms.Label();
+            this.buttonDeleteFiles = new System.Windows.Forms.Button();
             this.labelFilePartName = new System.Windows.Forms.Label();
             this.textBoxFilePartName = new System.Windows.Forms.TextBox();
-            this.buttonDeleteFiles = new System.Windows.Forms.Button();
+            this.textBoxFolderPath = new System.Windows.Forms.TextBox();
+            this.labelFolderPath = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.buttonDeleteFileExtension = new System.Windows.Forms.Button();
+            this.textBoxExtension = new System.Windows.Forms.TextBox();
+            this.labelExtension = new System.Windows.Forms.Label();
             this.textBoxFolderPathMask = new System.Windows.Forms.TextBox();
             this.labelFolderPathMask = new System.Windows.Forms.Label();
-            this.labelExtension = new System.Windows.Forms.Label();
-            this.textBoxExtension = new System.Windows.Forms.TextBox();
-            this.buttonDeleteFileExtension = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.textBoxSourceFile = new System.Windows.Forms.TextBox();
-            this.labelSourceFile = new System.Windows.Forms.Label();
-            this.labelMoveTheFile = new System.Windows.Forms.Label();
-            this.textBoxMoveTheFile = new System.Windows.Forms.TextBox();
             this.buttonFileMove = new System.Windows.Forms.Button();
+            this.textBoxMoveTheFile = new System.Windows.Forms.TextBox();
+            this.labelMoveTheFile = new System.Windows.Forms.Label();
+            this.labelSourceFile = new System.Windows.Forms.Label();
+            this.textBoxSourceFile = new System.Windows.Forms.TextBox();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.buttonWriteReport = new System.Windows.Forms.Button();
+            this.labelSearchWord = new System.Windows.Forms.Label();
+            this.labelFileForSearch = new System.Windows.Forms.Label();
+            this.textBoxSearchWord = new System.Windows.Forms.TextBox();
+            this.textBoxFileForSearch = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -73,6 +79,7 @@ namespace ApplicationTest
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            this.tabPage7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -83,6 +90,7 @@ namespace ApplicationTest
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -275,21 +283,14 @@ namespace ApplicationTest
             this.tabPage4.Text = "Удаление файлов по набору имен";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // textBoxFolderPath
+            // buttonDeleteFiles
             // 
-            this.textBoxFolderPath.Location = new System.Drawing.Point(228, 12);
-            this.textBoxFolderPath.Name = "textBoxFolderPath";
-            this.textBoxFolderPath.Size = new System.Drawing.Size(336, 20);
-            this.textBoxFolderPath.TabIndex = 6;
-            // 
-            // labelFolderPath
-            // 
-            this.labelFolderPath.AutoSize = true;
-            this.labelFolderPath.Location = new System.Drawing.Point(8, 15);
-            this.labelFolderPath.Name = "labelFolderPath";
-            this.labelFolderPath.Size = new System.Drawing.Size(214, 13);
-            this.labelFolderPath.TabIndex = 5;
-            this.labelFolderPath.Text = "Введите путь к папке, например: C:\\Test";
+            this.buttonDeleteFiles.Location = new System.Drawing.Point(11, 87);
+            this.buttonDeleteFiles.Name = "buttonDeleteFiles";
+            this.buttonDeleteFiles.Size = new System.Drawing.Size(180, 42);
+            this.buttonDeleteFiles.TabIndex = 9;
+            this.buttonDeleteFiles.Text = "Удалить";
+            this.buttonDeleteFiles.UseVisualStyleBackColor = true;
             // 
             // labelFilePartName
             // 
@@ -307,14 +308,21 @@ namespace ApplicationTest
             this.textBoxFilePartName.Size = new System.Drawing.Size(287, 20);
             this.textBoxFilePartName.TabIndex = 7;
             // 
-            // buttonDeleteFiles
+            // textBoxFolderPath
             // 
-            this.buttonDeleteFiles.Location = new System.Drawing.Point(11, 87);
-            this.buttonDeleteFiles.Name = "buttonDeleteFiles";
-            this.buttonDeleteFiles.Size = new System.Drawing.Size(180, 42);
-            this.buttonDeleteFiles.TabIndex = 9;
-            this.buttonDeleteFiles.Text = "Удалить";
-            this.buttonDeleteFiles.UseVisualStyleBackColor = true;
+            this.textBoxFolderPath.Location = new System.Drawing.Point(228, 12);
+            this.textBoxFolderPath.Name = "textBoxFolderPath";
+            this.textBoxFolderPath.Size = new System.Drawing.Size(336, 20);
+            this.textBoxFolderPath.TabIndex = 6;
+            // 
+            // labelFolderPath
+            // 
+            this.labelFolderPath.AutoSize = true;
+            this.labelFolderPath.Location = new System.Drawing.Point(8, 15);
+            this.labelFolderPath.Name = "labelFolderPath";
+            this.labelFolderPath.Size = new System.Drawing.Size(214, 13);
+            this.labelFolderPath.TabIndex = 5;
+            this.labelFolderPath.Text = "Введите путь к папке, например: C:\\Test";
             // 
             // tabPage5
             // 
@@ -329,6 +337,31 @@ namespace ApplicationTest
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Удаление файлов по маске";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // buttonDeleteFileExtension
+            // 
+            this.buttonDeleteFileExtension.Location = new System.Drawing.Point(11, 90);
+            this.buttonDeleteFileExtension.Name = "buttonDeleteFileExtension";
+            this.buttonDeleteFileExtension.Size = new System.Drawing.Size(180, 42);
+            this.buttonDeleteFileExtension.TabIndex = 11;
+            this.buttonDeleteFileExtension.Text = "Удалить";
+            this.buttonDeleteFileExtension.UseVisualStyleBackColor = true;
+            // 
+            // textBoxExtension
+            // 
+            this.textBoxExtension.Location = new System.Drawing.Point(240, 50);
+            this.textBoxExtension.Name = "textBoxExtension";
+            this.textBoxExtension.Size = new System.Drawing.Size(336, 20);
+            this.textBoxExtension.TabIndex = 10;
+            // 
+            // labelExtension
+            // 
+            this.labelExtension.AutoSize = true;
+            this.labelExtension.Location = new System.Drawing.Point(8, 53);
+            this.labelExtension.Name = "labelExtension";
+            this.labelExtension.Size = new System.Drawing.Size(226, 13);
+            this.labelExtension.TabIndex = 9;
+            this.labelExtension.Text = "Введите расширение файла, например *.txt";
             // 
             // textBoxFolderPathMask
             // 
@@ -346,31 +379,6 @@ namespace ApplicationTest
             this.labelFolderPathMask.TabIndex = 7;
             this.labelFolderPathMask.Text = "Введите путь к папке, например: C:\\Test";
             // 
-            // labelExtension
-            // 
-            this.labelExtension.AutoSize = true;
-            this.labelExtension.Location = new System.Drawing.Point(8, 53);
-            this.labelExtension.Name = "labelExtension";
-            this.labelExtension.Size = new System.Drawing.Size(226, 13);
-            this.labelExtension.TabIndex = 9;
-            this.labelExtension.Text = "Введите расширение файла, например *.txt";
-            // 
-            // textBoxExtension
-            // 
-            this.textBoxExtension.Location = new System.Drawing.Point(240, 50);
-            this.textBoxExtension.Name = "textBoxExtension";
-            this.textBoxExtension.Size = new System.Drawing.Size(336, 20);
-            this.textBoxExtension.TabIndex = 10;
-            // 
-            // buttonDeleteFileExtension
-            // 
-            this.buttonDeleteFileExtension.Location = new System.Drawing.Point(11, 90);
-            this.buttonDeleteFileExtension.Name = "buttonDeleteFileExtension";
-            this.buttonDeleteFileExtension.Size = new System.Drawing.Size(180, 42);
-            this.buttonDeleteFileExtension.TabIndex = 11;
-            this.buttonDeleteFileExtension.Text = "Удалить";
-            this.buttonDeleteFileExtension.UseVisualStyleBackColor = true;
-            // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.buttonFileMove);
@@ -385,21 +393,21 @@ namespace ApplicationTest
             this.tabPage6.Text = "Перенос файла.";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // textBoxSourceFile
+            // buttonFileMove
             // 
-            this.textBoxSourceFile.Location = new System.Drawing.Point(263, 13);
-            this.textBoxSourceFile.Name = "textBoxSourceFile";
-            this.textBoxSourceFile.Size = new System.Drawing.Size(450, 20);
-            this.textBoxSourceFile.TabIndex = 9;
+            this.buttonFileMove.Location = new System.Drawing.Point(11, 99);
+            this.buttonFileMove.Name = "buttonFileMove";
+            this.buttonFileMove.Size = new System.Drawing.Size(180, 42);
+            this.buttonFileMove.TabIndex = 13;
+            this.buttonFileMove.Text = "Выполнить перенос";
+            this.buttonFileMove.UseVisualStyleBackColor = true;
             // 
-            // labelSourceFile
+            // textBoxMoveTheFile
             // 
-            this.labelSourceFile.AutoSize = true;
-            this.labelSourceFile.Location = new System.Drawing.Point(8, 16);
-            this.labelSourceFile.Name = "labelSourceFile";
-            this.labelSourceFile.Size = new System.Drawing.Size(249, 13);
-            this.labelSourceFile.TabIndex = 10;
-            this.labelSourceFile.Text = "Введите путь к файлу, например C:\\Test2\\12.txt";
+            this.textBoxMoveTheFile.Location = new System.Drawing.Point(377, 51);
+            this.textBoxMoveTheFile.Name = "textBoxMoveTheFile";
+            this.textBoxMoveTheFile.Size = new System.Drawing.Size(336, 20);
+            this.textBoxMoveTheFile.TabIndex = 12;
             // 
             // labelMoveTheFile
             // 
@@ -410,21 +418,76 @@ namespace ApplicationTest
             this.labelMoveTheFile.TabIndex = 11;
             this.labelMoveTheFile.Text = "Введите путь, куда хотите переместить файл, например C:\\Test\\12.txt";
             // 
-            // textBoxMoveTheFile
+            // labelSourceFile
             // 
-            this.textBoxMoveTheFile.Location = new System.Drawing.Point(377, 51);
-            this.textBoxMoveTheFile.Name = "textBoxMoveTheFile";
-            this.textBoxMoveTheFile.Size = new System.Drawing.Size(336, 20);
-            this.textBoxMoveTheFile.TabIndex = 12;
+            this.labelSourceFile.AutoSize = true;
+            this.labelSourceFile.Location = new System.Drawing.Point(8, 16);
+            this.labelSourceFile.Name = "labelSourceFile";
+            this.labelSourceFile.Size = new System.Drawing.Size(249, 13);
+            this.labelSourceFile.TabIndex = 10;
+            this.labelSourceFile.Text = "Введите путь к файлу, например C:\\Test2\\12.txt";
             // 
-            // buttonFileMove
+            // textBoxSourceFile
             // 
-            this.buttonFileMove.Location = new System.Drawing.Point(11, 99);
-            this.buttonFileMove.Name = "buttonFileMove";
-            this.buttonFileMove.Size = new System.Drawing.Size(180, 42);
-            this.buttonFileMove.TabIndex = 13;
-            this.buttonFileMove.Text = "Выполнить перенос";
-            this.buttonFileMove.UseVisualStyleBackColor = true;
+            this.textBoxSourceFile.Location = new System.Drawing.Point(263, 13);
+            this.textBoxSourceFile.Name = "textBoxSourceFile";
+            this.textBoxSourceFile.Size = new System.Drawing.Size(450, 20);
+            this.textBoxSourceFile.TabIndex = 9;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.buttonWriteReport);
+            this.tabPage7.Controls.Add(this.labelSearchWord);
+            this.tabPage7.Controls.Add(this.labelFileForSearch);
+            this.tabPage7.Controls.Add(this.textBoxSearchWord);
+            this.tabPage7.Controls.Add(this.textBoxFileForSearch);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(792, 424);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Поиск слова в текстовом файле";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // buttonWriteReport
+            // 
+            this.buttonWriteReport.Location = new System.Drawing.Point(11, 94);
+            this.buttonWriteReport.Name = "buttonWriteReport";
+            this.buttonWriteReport.Size = new System.Drawing.Size(180, 42);
+            this.buttonWriteReport.TabIndex = 10;
+            this.buttonWriteReport.Text = "Сформировать отчет";
+            this.buttonWriteReport.UseVisualStyleBackColor = true;
+            // 
+            // labelSearchWord
+            // 
+            this.labelSearchWord.AutoSize = true;
+            this.labelSearchWord.Location = new System.Drawing.Point(8, 55);
+            this.labelSearchWord.Name = "labelSearchWord";
+            this.labelSearchWord.Size = new System.Drawing.Size(255, 13);
+            this.labelSearchWord.TabIndex = 9;
+            this.labelSearchWord.Text = "Введите слово для поиска, например: Академия";
+            // 
+            // labelFileForSearch
+            // 
+            this.labelFileForSearch.AutoSize = true;
+            this.labelFileForSearch.Location = new System.Drawing.Point(8, 17);
+            this.labelFileForSearch.Name = "labelFileForSearch";
+            this.labelFileForSearch.Size = new System.Drawing.Size(324, 13);
+            this.labelFileForSearch.TabIndex = 8;
+            this.labelFileForSearch.Text = "Введите путь к исходному файлу, например: C:\\Test\\MyFile.txt)";
+            // 
+            // textBoxSearchWord
+            // 
+            this.textBoxSearchWord.Location = new System.Drawing.Point(278, 52);
+            this.textBoxSearchWord.Name = "textBoxSearchWord";
+            this.textBoxSearchWord.Size = new System.Drawing.Size(337, 20);
+            this.textBoxSearchWord.TabIndex = 7;
+            // 
+            // textBoxFileForSearch
+            // 
+            this.textBoxFileForSearch.Location = new System.Drawing.Point(349, 14);
+            this.textBoxFileForSearch.Name = "textBoxFileForSearch";
+            this.textBoxFileForSearch.Size = new System.Drawing.Size(266, 20);
+            this.textBoxFileForSearch.TabIndex = 6;
             // 
             // FormMain
             // 
@@ -447,6 +510,8 @@ namespace ApplicationTest
             this.tabPage5.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -490,6 +555,12 @@ namespace ApplicationTest
         private System.Windows.Forms.Label labelMoveTheFile;
         private System.Windows.Forms.Label labelSourceFile;
         private System.Windows.Forms.TextBox textBoxSourceFile;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.Button buttonWriteReport;
+        private System.Windows.Forms.Label labelSearchWord;
+        private System.Windows.Forms.Label labelFileForSearch;
+        private System.Windows.Forms.TextBox textBoxSearchWord;
+        private System.Windows.Forms.TextBox textBoxFileForSearch;
     }
 }
 

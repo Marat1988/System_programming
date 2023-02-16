@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Text.RegularExpressions;
+
 namespace Task4Library
 {
     public class Work
@@ -130,6 +132,47 @@ namespace Task4Library
             {
                 infoMessage(ex.Message);
             }
+        }
+
+        /// <summary>
+        /// Функция для поиска слова в текстовом файле
+        /// </summary>
+        /// <param name="path">исходный файл</param>
+        /// <param name="word">слово для поиска</param>
+        /// <returns></returns>
+        private static int GetCountWordInTextFile(string path, string word)
+        {
+            string text = File.ReadAllText(path);
+            Regex regex = new Regex(word, RegexOptions.IgnoreCase);
+            MatchCollection rtg = regex.Matches(text);
+            int countWord = rtg.Count;
+            return countWord;
+        }
+        /// <summary>
+        /// Создает файл отчета с информацией сколько раз слово встречается в файле
+        /// </summary>
+        /// <param name="path">исходный файл</param>
+        /// <param name="word">слово для поиска</param>
+        public static void ReportCountWordInTextFile(string path, string word)
+        {
+            try
+            {
+                int countWord = GetCountWordInTextFile(path, word);
+                using (StreamWriter writer = new StreamWriter("Report.txt", false))
+                {
+                    writer.WriteLine("=====================================================");
+                    writer.WriteLine($"Исходный файл: {path}");
+                    writer.WriteLine($"Слово для поиска: {word}");
+                    writer.WriteLine($"Кол-во слов в файле: {countWord}");
+                    writer.WriteLine("=====================================================");
+                }
+                infoMessage($"Файл отчета {Environment.CurrentDirectory}\\Report.txt успешно создан");
+            }
+            catch (Exception ex)
+            {
+                infoMessage(ex.Message);
+            }
+
         }
     }
 }

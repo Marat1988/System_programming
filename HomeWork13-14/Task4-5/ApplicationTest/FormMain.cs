@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Task4Library;
 
@@ -22,7 +15,13 @@ namespace ApplicationTest
             buttonDeleteFiles.Click += ButtonDeleteFiles_Click;
             buttonDeleteFileExtension.Click += ButtonDeleteFileExtension_Click;
             buttonFileMove.Click += ButtonFileMove_Click;
+            buttonWriteReport.Click += ButtonWriteReport_Click;
             Work.infoMessage += Work_infoMessage;
+        }
+
+        private void ButtonWriteReport_Click(object sender, EventArgs e)
+        {
+            Work.ReportCountWordInTextFile(textBoxFileForSearch.Text, textBoxSearchWord.Text);
         }
 
         private void ButtonFileMove_Click(object sender, EventArgs e)

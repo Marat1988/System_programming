@@ -24,3 +24,16 @@ C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork13-14\Task4\Ap
 C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork13-14\Task4\ApplicationTest\obj\Debug\ApplicationTest.csproj.CopyComplete
 C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork13-14\Task4\ApplicationTest\obj\Debug\ApplicationTest.exe
 C:\Users\Mss.TRIBRATA\Documents\GitHub\System_programming\HomeWork13-14\Task4\ApplicationTest\obj\Debug\ApplicationTest.pdb
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task4-5\ApplicationTest\bin\Debug\ApplicationTest.exe.config
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task4-5\ApplicationTest\bin\Debug\ApplicationTest.exe
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task4-5\ApplicationTest\bin\Debug\ApplicationTest.pdb
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task4-5\ApplicationTest\bin\Debug\Task4Library.dll
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task4-5\ApplicationTest\bin\Debug\Task4Library.pdb
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task4-5\ApplicationTest\obj\Debug\ApplicationTest.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task4-5\ApplicationTest\obj\Debug\ApplicationTest.FormMain.resources
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task4-5\ApplicationTest\obj\Debug\ApplicationTest.Properties.Resources.resources
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task4-5\ApplicationTest\obj\Debug\ApplicationTest.csproj.GenerateResource.cache
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task4-5\ApplicationTest\obj\Debug\ApplicationTest.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task4-5\ApplicationTest\obj\Debug\ApplicationTest.csproj.CopyComplete
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task4-5\ApplicationTest\obj\Debug\ApplicationTest.exe
+C:\Users\HP\Documents\GitHub\System_programming\HomeWork13-14\Task4-5\ApplicationTest\obj\Debug\ApplicationTest.pdb

@@ -177,21 +177,21 @@ namespace Task4Library
         /// </summary>
         /// <param name="pathFolder">папка для поиска</param>
         /// <param name="word">слово для поиска</param>
-        public void SearchWordInTextFilesInTheFolder(string pathFolder, string word)
+        public static void SearchWordInTextFilesInTheFolder(string pathFolder, string word)
         {
             try
             {
                 DirectoryInfo directoryInfo = new DirectoryInfo(pathFolder);
-                foreach (var s in directoryInfo.GetFiles("*.txt", SearchOption.AllDirectories))
+                using (StreamWriter writer = new StreamWriter("Report.txt", false))
                 {
-                    using (StreamWriter writer = new StreamWriter("Report.txt", false))
+                    foreach (var s in directoryInfo.GetFiles("*.txt", SearchOption.AllDirectories))
                     {
                         writer.WriteLine("=====================================================");
                         writer.WriteLine($"Исходный файл: {s.FullName}");
                         writer.WriteLine($"Слово для поиска: {word}");
                         writer.WriteLine($"Кол-во слов в файле: {GetCountWordInTextFile(s.FullName, word)}");
                         writer.WriteLine("=====================================================");
-                    }
+                    }                   
                 }
                 infoMessage($"Файл отчета {Environment.CurrentDirectory}\\Report.txt успешно создан");
             }

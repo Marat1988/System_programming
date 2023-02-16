@@ -22,7 +22,7 @@ namespace ApplicationTest
 
         private void ButtonWriteReport2_Click(object sender, EventArgs e)
         {
-
+            Work.SearchWordInTextFilesInTheFolder(textBoxFolderPath2.Text, textBoxSearchWord2.Text);
         }
 
         private void ButtonWriteReport_Click(object sender, EventArgs e)

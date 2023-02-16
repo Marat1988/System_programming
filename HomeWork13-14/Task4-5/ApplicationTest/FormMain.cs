@@ -16,7 +16,13 @@ namespace ApplicationTest
             buttonDeleteFileExtension.Click += ButtonDeleteFileExtension_Click;
             buttonFileMove.Click += ButtonFileMove_Click;
             buttonWriteReport.Click += ButtonWriteReport_Click;
+            buttonWriteReport2.Click += ButtonWriteReport2_Click;
             Work.infoMessage += Work_infoMessage;
+        }
+
+        private void ButtonWriteReport2_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void ButtonWriteReport_Click(object sender, EventArgs e)

@@ -112,7 +112,7 @@ namespace Task4Library
                 {
                     infoMessage(ex.Message);
                 }
-            }         
+            }
         }
         /// <summary>
         /// Перенос файла.
@@ -133,7 +133,6 @@ namespace Task4Library
                 infoMessage(ex.Message);
             }
         }
-
         /// <summary>
         /// Функция для поиска слова в текстовом файле
         /// </summary>
@@ -172,7 +171,34 @@ namespace Task4Library
             {
                 infoMessage(ex.Message);
             }
-
+        }
+        /// <summary>
+        /// Поиск слова в текстовых файлах в папке
+        /// </summary>
+        /// <param name="pathFolder">папка для поиска</param>
+        /// <param name="word">слово для поиска</param>
+        public void SearchWordInTextFilesInTheFolder(string pathFolder, string word)
+        {
+            try
+            {
+                DirectoryInfo directoryInfo = new DirectoryInfo(pathFolder);
+                foreach (var s in directoryInfo.GetFiles("*.txt", SearchOption.AllDirectories))
+                {
+                    using (StreamWriter writer = new StreamWriter("Report.txt", false))
+                    {
+                        writer.WriteLine("=====================================================");
+                        writer.WriteLine($"Исходный файл: {s.FullName}");
+                        writer.WriteLine($"Слово для поиска: {word}");
+                        writer.WriteLine($"Кол-во слов в файле: {GetCountWordInTextFile(s.FullName, word)}");
+                        writer.WriteLine("=====================================================");
+                    }
+                }
+                infoMessage($"Файл отчета {Environment.CurrentDirectory}\\Report.txt успешно создан");
+            }
+            catch (Exception ex)
+            {
+                infoMessage(ex.Message);
+            }
         }
     }
 }

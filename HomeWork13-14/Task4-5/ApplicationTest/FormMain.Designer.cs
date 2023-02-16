@@ -72,6 +72,12 @@ namespace ApplicationTest
             this.labelFileForSearch = new System.Windows.Forms.Label();
             this.textBoxSearchWord = new System.Windows.Forms.TextBox();
             this.textBoxFileForSearch = new System.Windows.Forms.TextBox();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.buttonWriteReport2 = new System.Windows.Forms.Button();
+            this.labelSearchWord2 = new System.Windows.Forms.Label();
+            this.labelFolderPath2 = new System.Windows.Forms.Label();
+            this.textBoxSearchWord2 = new System.Windows.Forms.TextBox();
+            this.textBoxFolderPath2 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -80,6 +86,7 @@ namespace ApplicationTest
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
+            this.tabPage8.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -91,6 +98,7 @@ namespace ApplicationTest
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
+            this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -489,6 +497,61 @@ namespace ApplicationTest
             this.textBoxFileForSearch.Size = new System.Drawing.Size(266, 20);
             this.textBoxFileForSearch.TabIndex = 6;
             // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.buttonWriteReport2);
+            this.tabPage8.Controls.Add(this.labelSearchWord2);
+            this.tabPage8.Controls.Add(this.labelFolderPath2);
+            this.tabPage8.Controls.Add(this.textBoxSearchWord2);
+            this.tabPage8.Controls.Add(this.textBoxFolderPath2);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(792, 424);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "Поиск слова текстовых файлах в папке";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // buttonWriteReport2
+            // 
+            this.buttonWriteReport2.Location = new System.Drawing.Point(11, 94);
+            this.buttonWriteReport2.Name = "buttonWriteReport2";
+            this.buttonWriteReport2.Size = new System.Drawing.Size(180, 42);
+            this.buttonWriteReport2.TabIndex = 15;
+            this.buttonWriteReport2.Text = "Сформировать отчет";
+            this.buttonWriteReport2.UseVisualStyleBackColor = true;
+            // 
+            // labelSearchWord2
+            // 
+            this.labelSearchWord2.AutoSize = true;
+            this.labelSearchWord2.Location = new System.Drawing.Point(8, 55);
+            this.labelSearchWord2.Name = "labelSearchWord2";
+            this.labelSearchWord2.Size = new System.Drawing.Size(255, 13);
+            this.labelSearchWord2.TabIndex = 14;
+            this.labelSearchWord2.Text = "Введите слово для поиска, например: Академия";
+            // 
+            // labelFolderPath2
+            // 
+            this.labelFolderPath2.AutoSize = true;
+            this.labelFolderPath2.Location = new System.Drawing.Point(8, 17);
+            this.labelFolderPath2.Name = "labelFolderPath2";
+            this.labelFolderPath2.Size = new System.Drawing.Size(211, 13);
+            this.labelFolderPath2.TabIndex = 13;
+            this.labelFolderPath2.Text = "Введите путь к папке, например C:\\Test";
+            // 
+            // textBoxSearchWord2
+            // 
+            this.textBoxSearchWord2.Location = new System.Drawing.Point(278, 52);
+            this.textBoxSearchWord2.Name = "textBoxSearchWord2";
+            this.textBoxSearchWord2.Size = new System.Drawing.Size(213, 20);
+            this.textBoxSearchWord2.TabIndex = 12;
+            // 
+            // textBoxFolderPath2
+            // 
+            this.textBoxFolderPath2.Location = new System.Drawing.Point(225, 14);
+            this.textBoxFolderPath2.Name = "textBoxFolderPath2";
+            this.textBoxFolderPath2.Size = new System.Drawing.Size(266, 20);
+            this.textBoxFolderPath2.TabIndex = 11;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -512,6 +575,8 @@ namespace ApplicationTest
             this.tabPage6.PerformLayout();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
+            this.tabPage8.ResumeLayout(false);
+            this.tabPage8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -561,6 +626,12 @@ namespace ApplicationTest
         private System.Windows.Forms.Label labelFileForSearch;
         private System.Windows.Forms.TextBox textBoxSearchWord;
         private System.Windows.Forms.TextBox textBoxFileForSearch;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.Button buttonWriteReport2;
+        private System.Windows.Forms.Label labelSearchWord2;
+        private System.Windows.Forms.Label labelFolderPath2;
+        private System.Windows.Forms.TextBox textBoxSearchWord2;
+        private System.Windows.Forms.TextBox textBoxFolderPath2;
     }
 }
 

@@ -119,11 +119,12 @@ namespace Task4Library
         /// <param name="destFileName">Новое расположение файла</param>
         public static void FileMove(string sourceFileName, string destFileName)
         {
-            if (File.Exists(sourceFileName))
+            if (!File.Exists(sourceFileName))
                 throw new FileNotFoundException($"Исходный файл {sourceFileName} не существует");
             try
             {
                 File.Move(sourceFileName, destFileName);
+                infoMessage($"Файл {sourceFileName} перемещен в {sourceFileName}.");
             }
             catch (Exception ex)
             {

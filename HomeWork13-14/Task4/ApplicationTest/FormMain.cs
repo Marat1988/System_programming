@@ -19,7 +19,25 @@ namespace ApplicationTest
             buttonStartCopy.Click += ButtonStartCopy_Click;
             buttonDirectoryCopy.Click += ButtonDirectoryCopy_Click;
             buttonDeleteFile.Click += ButtonDeleteFile_Click;
+            buttonDeleteFiles.Click += ButtonDeleteFiles_Click;
+            buttonDeleteFileExtension.Click += ButtonDeleteFileExtension_Click;
+            buttonFileMove.Click += ButtonFileMove_Click;
             Work.infoMessage += Work_infoMessage;
+        }
+
+        private void ButtonFileMove_Click(object sender, EventArgs e)
+        {
+            Work.FileMove(textBoxSourceFile.Text, textBoxMoveTheFile.Text);
+        }
+
+        private void ButtonDeleteFileExtension_Click(object sender, EventArgs e)
+        {
+            Work.DemandingExpansionFile(textBoxFolderPathMask.Text, textBoxExtension.Text);
+        }
+
+        private void ButtonDeleteFiles_Click(object sender, EventArgs e)
+        {
+            Work.FilesRemove(textBoxFolderPath.Text, textBoxFilePartName.Text);
         }
 
         private void ButtonDeleteFile_Click(object sender, EventArgs e)
